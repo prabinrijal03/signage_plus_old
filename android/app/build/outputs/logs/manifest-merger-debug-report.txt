@@ -1,0 +1,473 @@
+-- Merging decision tree log ---
+application
+INJECTED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:28:5-89:19
+MERGED from [:url_launcher_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-14:19
+MERGED from [:url_launcher_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-14:19
+MERGED from [androidx.window:window:1.0.0-beta04] /Users/roshish/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.window:window:1.0.0-beta04] /Users/roshish/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:24:5-31:19
+MERGED from [com.github.bumptech.glide:glide:4.10.0] /Users/roshish/.gradle/caches/transforms-3/5b56f11b79d742244e98d2e3b09e3fd8/transformed/jetified-glide-4.10.0/AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.10.0] /Users/roshish/.gradle/caches/transforms-3/5b56f11b79d742244e98d2e3b09e3fd8/transformed/jetified-glide-4.10.0/AndroidManifest.xml:10:5-20
+MERGED from [androidx.core:core:1.10.1] /Users/roshish/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.10.1] /Users/roshish/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:28:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/roshish/.gradle/caches/transforms-3/47ecd4e588b99ef3b772f04d5aa6c9b7/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/roshish/.gradle/caches/transforms-3/47ecd4e588b99ef3b772f04d5aa6c9b7/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] /Users/roshish/.gradle/caches/transforms-3/c552ea0dd4c22cc248329a127dbd3c91/transformed/jetified-gifdecoder-4.10.0/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] /Users/roshish/.gradle/caches/transforms-3/c552ea0dd4c22cc248329a127dbd3c91/transformed/jetified-gifdecoder-4.10.0/AndroidManifest.xml:9:5-20
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.10.1] /Users/roshish/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:28:18-86
+	android:name
+		INJECTED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml
+manifest
+ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:1:1-90:12
+INJECTED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:1:1-90:12
+INJECTED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:1:1-90:12
+INJECTED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:1:1-90:12
+MERGED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:1:1-90:12
+MERGED from [:cached_video_player] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/cached_video_player/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:wifi_scan] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_scan/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-16:12
+MERGED from [:bluetooth_print] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/bluetooth_print/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-15:12
+MERGED from [:flutter_app_installer] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/flutter_app_installer/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:sqflite] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/sqflite/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:url_launcher_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-16:12
+MERGED from [:path_provider_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:android_intent_plus] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/android_intent_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:export_video_frame] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/export_video_frame/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-12:12
+MERGED from [:wakelock] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wakelock/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:webview_flutter_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/webview_flutter_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:just_audio] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/just_audio/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:permission_handler_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/permission_handler_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:external_app_launcher] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/external_app_launcher/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:media_info] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/media_info/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:wifi_iot] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_iot/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-21:12
+MERGED from [:restart_app] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/restart_app/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:audio_session] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/audio_session/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:device_apps] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/device_apps/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:video_player_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/video_player_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:screen_brightness_util_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/screen_brightness_util_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.multidex:multidex:2.0.1] /Users/roshish/.gradle/caches/transforms-3/a8fecca33f39f56dab3426149759de78/transformed/multidex-2.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.window:window-java:1.0.0-beta04] /Users/roshish/.gradle/caches/transforms-3/ae81e06d24c799147c26814497a2a305/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.4.1] /Users/roshish/.gradle/caches/transforms-3/d248dea6ffe950e0cccffbe38c89306a/transformed/jetified-lifecycle-runtime-ktx-2.4.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.window:window:1.0.0-beta04] /Users/roshish/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:17:1-33:12
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.18.7] /Users/roshish/.gradle/caches/transforms-3/055cf5228dd3b9b69e5bd2a35951aed6/transformed/jetified-exoplayer-dash-2.18.7/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.18.7] /Users/roshish/.gradle/caches/transforms-3/de4501bdbb2252c813fd52b51b39cff4/transformed/jetified-exoplayer-hls-2.18.7/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.18.7] /Users/roshish/.gradle/caches/transforms-3/388f210c80f467fc5caf9e3796c05146/transformed/jetified-exoplayer-smoothstreaming-2.18.7/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.18.7] /Users/roshish/.gradle/caches/transforms-3/e255c6ce9910a673f2619b479a7d74a8/transformed/jetified-exoplayer-core-2.18.7/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.browser:browser:1.5.0] /Users/roshish/.gradle/caches/transforms-3/d12883dde0390e08dd2a1192741cec1b/transformed/browser-1.5.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.0.2] /Users/roshish/.gradle/caches/transforms-3/223b9f790050b6c01f7edb01f29885db/transformed/appcompat-1.0.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.webkit:webkit:1.7.0] /Users/roshish/.gradle/caches/transforms-3/26053599e8c0dac0e11dd421905435f3/transformed/webkit-1.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:glide:4.10.0] /Users/roshish/.gradle/caches/transforms-3/5b56f11b79d742244e98d2e3b09e3fd8/transformed/jetified-glide-4.10.0/AndroidManifest.xml:2:1-12:12
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/roshish/.gradle/caches/transforms-3/75f94412898c7559d34d7edbbeaeb394/transformed/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/roshish/.gradle/caches/transforms-3/053fda1f704ca4699b0ac605a6cc8733/transformed/vectordrawable-animated-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/roshish/.gradle/caches/transforms-3/3e3509a6e29241205a87ee9fedabb59e/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/roshish/.gradle/caches/transforms-3/569ce58d3dd49b227442bbb0d5f7ce08/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /Users/roshish/.gradle/caches/transforms-3/9a7f98c66b3dca62dad27978e1269d76/transformed/vectordrawable-1.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media2:media2-session:1.2.1] /Users/roshish/.gradle/caches/transforms-3/1c11fcd5d741b7583794ec56efdeaa69/transformed/jetified-media2-session-1.2.1/AndroidManifest.xml:17:1-36:12
+MERGED from [androidx.media2:media2-common:1.2.1] /Users/roshish/.gradle/caches/transforms-3/3f63f4e57bfeace9e338994a937aca8a/transformed/jetified-media2-common-1.2.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/roshish/.gradle/caches/transforms-3/83543b509ea72d197642ff197da2edd7/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/roshish/.gradle/caches/transforms-3/ff65482bd388a984f10ca7f5c3c41d0d/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /Users/roshish/.gradle/caches/transforms-3/eb85f6cd47cafc1c47da2a37336a0e33/transformed/jetified-activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.media:media:1.4.1] /Users/roshish/.gradle/caches/transforms-3/33aeac6041f7f32f65addefb234a1ba0/transformed/media-1.4.1/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/roshish/.gradle/caches/transforms-3/c0c5f8382331f2d900d2cb549c45e898/transformed/coordinatorlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/roshish/.gradle/caches/transforms-3/a4afa9096b82840215b23d4f1814b051/transformed/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/roshish/.gradle/caches/transforms-3/2c6be38e30f8cf1860a7d797db152b77/transformed/slidingpanelayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/roshish/.gradle/caches/transforms-3/1d2f11a7d5de7a531a69c65e1d8a2026/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/roshish/.gradle/caches/transforms-3/7452f5f3cbe2f9f7b119f33b5185d3c0/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/roshish/.gradle/caches/transforms-3/c17cf266156de71799199302788a6c34/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.10.1] /Users/roshish/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/roshish/.gradle/caches/transforms-3/cda2a1ca4d3bd6aae60d8d586ec4f3ff/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/roshish/.gradle/caches/transforms-3/860a920bd188d8e467960610e541a595/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/roshish/.gradle/caches/transforms-3/47ecd4e588b99ef3b772f04d5aa6c9b7/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.databinding:databinding-runtime:4.2.2] /Users/roshish/.gradle/caches/transforms-3/57f844f1fc643e443a99aeeeeb8dc216/transformed/databinding-runtime-4.2.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/roshish/.gradle/caches/transforms-3/9cc12674340416d986d3f85facb4cb0b/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.exoplayer:exoplayer-datasource:2.18.7] /Users/roshish/.gradle/caches/transforms-3/17a021ed8ea2b61598cabd9bcb46b717/transformed/jetified-exoplayer-datasource-2.18.7/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.18.7] /Users/roshish/.gradle/caches/transforms-3/2053637c3fc13121f97a8fc5b5140ad1/transformed/jetified-exoplayer-extractor-2.18.7/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-decoder:2.18.7] /Users/roshish/.gradle/caches/transforms-3/9fd8bb00c210c63aa353430a6275f89b/transformed/jetified-exoplayer-decoder-2.18.7/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-database:2.18.7] /Users/roshish/.gradle/caches/transforms-3/fc6037af071b80a2612cc4d6f68fcc9a/transformed/jetified-exoplayer-database-2.18.7/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.18.7] /Users/roshish/.gradle/caches/transforms-3/3a633bb9eac75a1461b6fbfc4b0e1113/transformed/jetified-exoplayer-common-2.18.7/AndroidManifest.xml:17:1-26:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] /Users/roshish/.gradle/caches/transforms-3/c552ea0dd4c22cc248329a127dbd3c91/transformed/jetified-gifdecoder-4.10.0/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.databinding:viewbinding:4.2.2] /Users/roshish/.gradle/caches/transforms-3/c939748570a53e38396af3a06fc0407f/transformed/jetified-viewbinding-4.2.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.1] /Users/roshish/.gradle/caches/transforms-3/af6525d6dc09b08ef770e935b74848c1/transformed/lifecycle-runtime-2.4.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/roshish/.gradle/caches/transforms-3/030cbe894f59f6068671c5a12b2190e8/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/roshish/.gradle/caches/transforms-3/52209f20efc31613e6a8da15f7614461/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/roshish/.gradle/caches/transforms-3/c24f99b8bdfeb14f29b2ef7a86a4db48/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/roshish/.gradle/caches/transforms-3/61969234c20435b339c4ea8c72dc0f22/transformed/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/roshish/.gradle/caches/transforms-3/7fcad9088319f1ebd7850d62df4bcaf7/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/roshish/.gradle/caches/transforms-3/c9c1416cfdc16237773b18cd0425609e/transformed/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/roshish/.gradle/caches/transforms-3/d67fb65d423f69a271e62fa0f5833fa6/transformed/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/roshish/.gradle/caches/transforms-3/03b9b3b952540ee8cedf6c096276d934/transformed/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/roshish/.gradle/caches/transforms-3/937d6edc8055f6701a18eeac1a67afe6/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+	package
+		INJECTED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:1:1-90:12
+		INJECTED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/debug/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:1:1-90:12
+		INJECTED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/debug/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:1:1-90:12
+		INJECTED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/debug/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:2:5-66
+MERGED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:2:5-66
+MERGED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:2:5-66
+MERGED from [:wifi_iot] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_iot/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-67
+MERGED from [:wifi_iot] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_iot/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:2:22-64
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:3:5-79
+MERGED from [:export_video_frame] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/export_video_frame/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-80
+MERGED from [:export_video_frame] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/export_video_frame/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-80
+	android:name
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:3:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:4:5-80
+MERGED from [:export_video_frame] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/export_video_frame/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-81
+MERGED from [:export_video_frame] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/export_video_frame/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-81
+	android:name
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:4:22-78
+uses-permission#android.permission.WAKE_LOCK
+ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:5:5-68
+	android:name
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:5:22-65
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:6:5-81
+	android:name
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:6:22-78
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:7:5-78
+	android:name
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:7:22-75
+uses-permission#android.permission.REQUEST_INSTALL_PACKAGES
+ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:8:5-83
+	android:name
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:8:22-80
+uses-permission#android.permission.INSTALL_PACKAGES
+ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:9:5-75
+	android:name
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:9:22-72
+uses-permission#android.permission.DELETE_PACKAGES
+ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:10:5-74
+	android:name
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:10:22-71
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:11:5-76
+MERGED from [:wifi_scan] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_scan/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-76
+MERGED from [:wifi_scan] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_scan/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-76
+MERGED from [:wifi_iot] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_iot/intermediates/merged_manifest/debug/AndroidManifest.xml:12:5-76
+MERGED from [:wifi_iot] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_iot/intermediates/merged_manifest/debug/AndroidManifest.xml:12:5-76
+	android:name
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:11:22-73
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:12:5-76
+MERGED from [:wifi_scan] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_scan/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-76
+MERGED from [:wifi_scan] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_scan/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-76
+MERGED from [:wifi_iot] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_iot/intermediates/merged_manifest/debug/AndroidManifest.xml:18:5-76
+MERGED from [:wifi_iot] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_iot/intermediates/merged_manifest/debug/AndroidManifest.xml:18:5-76
+	android:name
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:12:22-73
+uses-permission#android.permission.CHANGE_NETWORK_STATE
+ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:13:5-79
+MERGED from [:wifi_iot] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_iot/intermediates/merged_manifest/debug/AndroidManifest.xml:14:5-79
+MERGED from [:wifi_iot] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_iot/intermediates/merged_manifest/debug/AndroidManifest.xml:14:5-79
+	android:name
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:13:22-76
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:14:5-79
+MERGED from [:wifi_scan] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_scan/intermediates/merged_manifest/debug/AndroidManifest.xml:14:5-79
+MERGED from [:wifi_scan] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_scan/intermediates/merged_manifest/debug/AndroidManifest.xml:14:5-79
+MERGED from [:bluetooth_print] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/bluetooth_print/intermediates/merged_manifest/debug/AndroidManifest.xml:13:5-79
+MERGED from [:bluetooth_print] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/bluetooth_print/intermediates/merged_manifest/debug/AndroidManifest.xml:13:5-79
+MERGED from [:wifi_iot] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_iot/intermediates/merged_manifest/debug/AndroidManifest.xml:15:5-79
+MERGED from [:wifi_iot] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_iot/intermediates/merged_manifest/debug/AndroidManifest.xml:15:5-79
+	android:name
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:14:22-76
+uses-permission#android.permission.BLUETOOTH
+ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:15:5-68
+MERGED from [:bluetooth_print] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/bluetooth_print/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-68
+MERGED from [:bluetooth_print] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/bluetooth_print/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-68
+	android:name
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:15:22-65
+uses-permission#android.permission.BLUETOOTH_SCAN
+ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:16:2-70
+MERGED from [:bluetooth_print] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/bluetooth_print/intermediates/merged_manifest/debug/AndroidManifest.xml:12:5-73
+MERGED from [:bluetooth_print] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/bluetooth_print/intermediates/merged_manifest/debug/AndroidManifest.xml:12:5-73
+	android:name
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:16:19-67
+uses-permission#android.permission.BLUETOOTH_CONNECT
+ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:17:5-76
+MERGED from [:bluetooth_print] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/bluetooth_print/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-76
+MERGED from [:bluetooth_print] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/bluetooth_print/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-76
+	android:name
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:17:22-73
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:18:2-71
+MERGED from [:bluetooth_print] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/bluetooth_print/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-74
+MERGED from [:bluetooth_print] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/bluetooth_print/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-74
+	android:name
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:18:19-68
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:19:2-77
+MERGED from [:wifi_scan] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_scan/intermediates/merged_manifest/debug/AndroidManifest.xml:13:5-81
+MERGED from [:wifi_scan] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_scan/intermediates/merged_manifest/debug/AndroidManifest.xml:13:5-81
+MERGED from [:wifi_iot] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_iot/intermediates/merged_manifest/debug/AndroidManifest.xml:16:5-81
+MERGED from [:wifi_iot] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_iot/intermediates/merged_manifest/debug/AndroidManifest.xml:16:5-81
+	android:name
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:19:19-75
+queries
+ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:22:5-26:15
+MERGED from [androidx.media2:media2-session:1.2.1] /Users/roshish/.gradle/caches/transforms-3/1c11fcd5d741b7583794ec56efdeaa69/transformed/jetified-media2-session-1.2.1/AndroidManifest.xml:24:5-34:15
+MERGED from [androidx.media2:media2-session:1.2.1] /Users/roshish/.gradle/caches/transforms-3/1c11fcd5d741b7583794ec56efdeaa69/transformed/jetified-media2-session-1.2.1/AndroidManifest.xml:24:5-34:15
+MERGED from [androidx.media:media:1.4.1] /Users/roshish/.gradle/caches/transforms-3/33aeac6041f7f32f65addefb234a1ba0/transformed/media-1.4.1/AndroidManifest.xml:24:5-28:15
+MERGED from [androidx.media:media:1.4.1] /Users/roshish/.gradle/caches/transforms-3/33aeac6041f7f32f65addefb234a1ba0/transformed/media-1.4.1/AndroidManifest.xml:24:5-28:15
+package#com.slashplus.signage_updater
+ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:23:9-65
+	android:name
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:23:18-62
+package#com.amlogic.mediaboxlauncher
+ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:24:9-64
+	android:name
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:24:18-61
+package#com.android.providers.settings
+ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:25:9-66
+	android:name
+		ADDED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml:25:18-63
+uses-sdk
+INJECTED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml
+MERGED from [:cached_video_player] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/cached_video_player/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:cached_video_player] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/cached_video_player/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:wifi_scan] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_scan/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:wifi_scan] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_scan/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:bluetooth_print] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/bluetooth_print/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:bluetooth_print] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/bluetooth_print/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_app_installer] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/flutter_app_installer/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_app_installer] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/flutter_app_installer/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:sqflite] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/sqflite/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:sqflite] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/sqflite/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:url_launcher_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:url_launcher_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:path_provider_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:path_provider_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/path_provider_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:android_intent_plus] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/android_intent_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:android_intent_plus] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/android_intent_plus/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:export_video_frame] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/export_video_frame/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:export_video_frame] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/export_video_frame/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:wakelock] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wakelock/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:wakelock] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wakelock/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:webview_flutter_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/webview_flutter_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:webview_flutter_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/webview_flutter_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:just_audio] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/just_audio/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:just_audio] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/just_audio/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:permission_handler_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/permission_handler_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:permission_handler_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/permission_handler_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:external_app_launcher] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/external_app_launcher/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:external_app_launcher] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/external_app_launcher/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:media_info] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/media_info/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:media_info] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/media_info/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:wifi_iot] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_iot/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:wifi_iot] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_iot/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:restart_app] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/restart_app/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:restart_app] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/restart_app/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:audio_session] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/audio_session/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:audio_session] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/audio_session/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:device_apps] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/device_apps/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:device_apps] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/device_apps/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:video_player_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/video_player_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:video_player_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/video_player_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:screen_brightness_util_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/screen_brightness_util_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:screen_brightness_util_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/screen_brightness_util_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.multidex:multidex:2.0.1] /Users/roshish/.gradle/caches/transforms-3/a8fecca33f39f56dab3426149759de78/transformed/multidex-2.0.1/AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.1] /Users/roshish/.gradle/caches/transforms-3/a8fecca33f39f56dab3426149759de78/transformed/multidex-2.0.1/AndroidManifest.xml:20:5-43
+MERGED from [androidx.window:window-java:1.0.0-beta04] /Users/roshish/.gradle/caches/transforms-3/ae81e06d24c799147c26814497a2a305/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.window:window-java:1.0.0-beta04] /Users/roshish/.gradle/caches/transforms-3/ae81e06d24c799147c26814497a2a305/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.4.1] /Users/roshish/.gradle/caches/transforms-3/d248dea6ffe950e0cccffbe38c89306a/transformed/jetified-lifecycle-runtime-ktx-2.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.4.1] /Users/roshish/.gradle/caches/transforms-3/d248dea6ffe950e0cccffbe38c89306a/transformed/jetified-lifecycle-runtime-ktx-2.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0-beta04] /Users/roshish/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0-beta04] /Users/roshish/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.18.7] /Users/roshish/.gradle/caches/transforms-3/055cf5228dd3b9b69e5bd2a35951aed6/transformed/jetified-exoplayer-dash-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.18.7] /Users/roshish/.gradle/caches/transforms-3/055cf5228dd3b9b69e5bd2a35951aed6/transformed/jetified-exoplayer-dash-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.18.7] /Users/roshish/.gradle/caches/transforms-3/de4501bdbb2252c813fd52b51b39cff4/transformed/jetified-exoplayer-hls-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.18.7] /Users/roshish/.gradle/caches/transforms-3/de4501bdbb2252c813fd52b51b39cff4/transformed/jetified-exoplayer-hls-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.18.7] /Users/roshish/.gradle/caches/transforms-3/388f210c80f467fc5caf9e3796c05146/transformed/jetified-exoplayer-smoothstreaming-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.18.7] /Users/roshish/.gradle/caches/transforms-3/388f210c80f467fc5caf9e3796c05146/transformed/jetified-exoplayer-smoothstreaming-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.18.7] /Users/roshish/.gradle/caches/transforms-3/e255c6ce9910a673f2619b479a7d74a8/transformed/jetified-exoplayer-core-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.18.7] /Users/roshish/.gradle/caches/transforms-3/e255c6ce9910a673f2619b479a7d74a8/transformed/jetified-exoplayer-core-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.browser:browser:1.5.0] /Users/roshish/.gradle/caches/transforms-3/d12883dde0390e08dd2a1192741cec1b/transformed/browser-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.browser:browser:1.5.0] /Users/roshish/.gradle/caches/transforms-3/d12883dde0390e08dd2a1192741cec1b/transformed/browser-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.2] /Users/roshish/.gradle/caches/transforms-3/223b9f790050b6c01f7edb01f29885db/transformed/appcompat-1.0.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.2] /Users/roshish/.gradle/caches/transforms-3/223b9f790050b6c01f7edb01f29885db/transformed/appcompat-1.0.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.webkit:webkit:1.7.0] /Users/roshish/.gradle/caches/transforms-3/26053599e8c0dac0e11dd421905435f3/transformed/webkit-1.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.webkit:webkit:1.7.0] /Users/roshish/.gradle/caches/transforms-3/26053599e8c0dac0e11dd421905435f3/transformed/webkit-1.7.0/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:glide:4.10.0] /Users/roshish/.gradle/caches/transforms-3/5b56f11b79d742244e98d2e3b09e3fd8/transformed/jetified-glide-4.10.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.10.0] /Users/roshish/.gradle/caches/transforms-3/5b56f11b79d742244e98d2e3b09e3fd8/transformed/jetified-glide-4.10.0/AndroidManifest.xml:6:5-8:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/roshish/.gradle/caches/transforms-3/75f94412898c7559d34d7edbbeaeb394/transformed/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/roshish/.gradle/caches/transforms-3/75f94412898c7559d34d7edbbeaeb394/transformed/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/roshish/.gradle/caches/transforms-3/053fda1f704ca4699b0ac605a6cc8733/transformed/vectordrawable-animated-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/roshish/.gradle/caches/transforms-3/053fda1f704ca4699b0ac605a6cc8733/transformed/vectordrawable-animated-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/roshish/.gradle/caches/transforms-3/3e3509a6e29241205a87ee9fedabb59e/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/roshish/.gradle/caches/transforms-3/3e3509a6e29241205a87ee9fedabb59e/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/roshish/.gradle/caches/transforms-3/569ce58d3dd49b227442bbb0d5f7ce08/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/roshish/.gradle/caches/transforms-3/569ce58d3dd49b227442bbb0d5f7ce08/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /Users/roshish/.gradle/caches/transforms-3/9a7f98c66b3dca62dad27978e1269d76/transformed/vectordrawable-1.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /Users/roshish/.gradle/caches/transforms-3/9a7f98c66b3dca62dad27978e1269d76/transformed/vectordrawable-1.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media2:media2-session:1.2.1] /Users/roshish/.gradle/caches/transforms-3/1c11fcd5d741b7583794ec56efdeaa69/transformed/jetified-media2-session-1.2.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.media2:media2-session:1.2.1] /Users/roshish/.gradle/caches/transforms-3/1c11fcd5d741b7583794ec56efdeaa69/transformed/jetified-media2-session-1.2.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.media2:media2-common:1.2.1] /Users/roshish/.gradle/caches/transforms-3/3f63f4e57bfeace9e338994a937aca8a/transformed/jetified-media2-common-1.2.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.media2:media2-common:1.2.1] /Users/roshish/.gradle/caches/transforms-3/3f63f4e57bfeace9e338994a937aca8a/transformed/jetified-media2-common-1.2.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/roshish/.gradle/caches/transforms-3/83543b509ea72d197642ff197da2edd7/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/roshish/.gradle/caches/transforms-3/83543b509ea72d197642ff197da2edd7/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/roshish/.gradle/caches/transforms-3/ff65482bd388a984f10ca7f5c3c41d0d/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/roshish/.gradle/caches/transforms-3/ff65482bd388a984f10ca7f5c3c41d0d/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /Users/roshish/.gradle/caches/transforms-3/eb85f6cd47cafc1c47da2a37336a0e33/transformed/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /Users/roshish/.gradle/caches/transforms-3/eb85f6cd47cafc1c47da2a37336a0e33/transformed/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.media:media:1.4.1] /Users/roshish/.gradle/caches/transforms-3/33aeac6041f7f32f65addefb234a1ba0/transformed/media-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.media:media:1.4.1] /Users/roshish/.gradle/caches/transforms-3/33aeac6041f7f32f65addefb234a1ba0/transformed/media-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/roshish/.gradle/caches/transforms-3/c0c5f8382331f2d900d2cb549c45e898/transformed/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/roshish/.gradle/caches/transforms-3/c0c5f8382331f2d900d2cb549c45e898/transformed/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/roshish/.gradle/caches/transforms-3/a4afa9096b82840215b23d4f1814b051/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/roshish/.gradle/caches/transforms-3/a4afa9096b82840215b23d4f1814b051/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/roshish/.gradle/caches/transforms-3/2c6be38e30f8cf1860a7d797db152b77/transformed/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/roshish/.gradle/caches/transforms-3/2c6be38e30f8cf1860a7d797db152b77/transformed/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/roshish/.gradle/caches/transforms-3/1d2f11a7d5de7a531a69c65e1d8a2026/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/roshish/.gradle/caches/transforms-3/1d2f11a7d5de7a531a69c65e1d8a2026/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/roshish/.gradle/caches/transforms-3/7452f5f3cbe2f9f7b119f33b5185d3c0/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/roshish/.gradle/caches/transforms-3/7452f5f3cbe2f9f7b119f33b5185d3c0/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/roshish/.gradle/caches/transforms-3/c17cf266156de71799199302788a6c34/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/roshish/.gradle/caches/transforms-3/c17cf266156de71799199302788a6c34/transformed/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.10.1] /Users/roshish/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.10.1] /Users/roshish/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/roshish/.gradle/caches/transforms-3/cda2a1ca4d3bd6aae60d8d586ec4f3ff/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/roshish/.gradle/caches/transforms-3/cda2a1ca4d3bd6aae60d8d586ec4f3ff/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/roshish/.gradle/caches/transforms-3/860a920bd188d8e467960610e541a595/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/roshish/.gradle/caches/transforms-3/860a920bd188d8e467960610e541a595/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/roshish/.gradle/caches/transforms-3/47ecd4e588b99ef3b772f04d5aa6c9b7/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/roshish/.gradle/caches/transforms-3/47ecd4e588b99ef3b772f04d5aa6c9b7/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.databinding:databinding-runtime:4.2.2] /Users/roshish/.gradle/caches/transforms-3/57f844f1fc643e443a99aeeeeb8dc216/transformed/databinding-runtime-4.2.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.databinding:databinding-runtime:4.2.2] /Users/roshish/.gradle/caches/transforms-3/57f844f1fc643e443a99aeeeeb8dc216/transformed/databinding-runtime-4.2.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/roshish/.gradle/caches/transforms-3/9cc12674340416d986d3f85facb4cb0b/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/roshish/.gradle/caches/transforms-3/9cc12674340416d986d3f85facb4cb0b/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.exoplayer:exoplayer-datasource:2.18.7] /Users/roshish/.gradle/caches/transforms-3/17a021ed8ea2b61598cabd9bcb46b717/transformed/jetified-exoplayer-datasource-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-datasource:2.18.7] /Users/roshish/.gradle/caches/transforms-3/17a021ed8ea2b61598cabd9bcb46b717/transformed/jetified-exoplayer-datasource-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.18.7] /Users/roshish/.gradle/caches/transforms-3/2053637c3fc13121f97a8fc5b5140ad1/transformed/jetified-exoplayer-extractor-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.18.7] /Users/roshish/.gradle/caches/transforms-3/2053637c3fc13121f97a8fc5b5140ad1/transformed/jetified-exoplayer-extractor-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-decoder:2.18.7] /Users/roshish/.gradle/caches/transforms-3/9fd8bb00c210c63aa353430a6275f89b/transformed/jetified-exoplayer-decoder-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-decoder:2.18.7] /Users/roshish/.gradle/caches/transforms-3/9fd8bb00c210c63aa353430a6275f89b/transformed/jetified-exoplayer-decoder-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-database:2.18.7] /Users/roshish/.gradle/caches/transforms-3/fc6037af071b80a2612cc4d6f68fcc9a/transformed/jetified-exoplayer-database-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-database:2.18.7] /Users/roshish/.gradle/caches/transforms-3/fc6037af071b80a2612cc4d6f68fcc9a/transformed/jetified-exoplayer-database-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.18.7] /Users/roshish/.gradle/caches/transforms-3/3a633bb9eac75a1461b6fbfc4b0e1113/transformed/jetified-exoplayer-common-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.18.7] /Users/roshish/.gradle/caches/transforms-3/3a633bb9eac75a1461b6fbfc4b0e1113/transformed/jetified-exoplayer-common-2.18.7/AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] /Users/roshish/.gradle/caches/transforms-3/c552ea0dd4c22cc248329a127dbd3c91/transformed/jetified-gifdecoder-4.10.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] /Users/roshish/.gradle/caches/transforms-3/c552ea0dd4c22cc248329a127dbd3c91/transformed/jetified-gifdecoder-4.10.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.databinding:viewbinding:4.2.2] /Users/roshish/.gradle/caches/transforms-3/c939748570a53e38396af3a06fc0407f/transformed/jetified-viewbinding-4.2.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.databinding:viewbinding:4.2.2] /Users/roshish/.gradle/caches/transforms-3/c939748570a53e38396af3a06fc0407f/transformed/jetified-viewbinding-4.2.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.1] /Users/roshish/.gradle/caches/transforms-3/af6525d6dc09b08ef770e935b74848c1/transformed/lifecycle-runtime-2.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.1] /Users/roshish/.gradle/caches/transforms-3/af6525d6dc09b08ef770e935b74848c1/transformed/lifecycle-runtime-2.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/roshish/.gradle/caches/transforms-3/030cbe894f59f6068671c5a12b2190e8/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/roshish/.gradle/caches/transforms-3/030cbe894f59f6068671c5a12b2190e8/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/roshish/.gradle/caches/transforms-3/52209f20efc31613e6a8da15f7614461/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/roshish/.gradle/caches/transforms-3/52209f20efc31613e6a8da15f7614461/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/roshish/.gradle/caches/transforms-3/c24f99b8bdfeb14f29b2ef7a86a4db48/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/roshish/.gradle/caches/transforms-3/c24f99b8bdfeb14f29b2ef7a86a4db48/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/roshish/.gradle/caches/transforms-3/61969234c20435b339c4ea8c72dc0f22/transformed/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/roshish/.gradle/caches/transforms-3/61969234c20435b339c4ea8c72dc0f22/transformed/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/roshish/.gradle/caches/transforms-3/7fcad9088319f1ebd7850d62df4bcaf7/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/roshish/.gradle/caches/transforms-3/7fcad9088319f1ebd7850d62df4bcaf7/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/roshish/.gradle/caches/transforms-3/c9c1416cfdc16237773b18cd0425609e/transformed/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/roshish/.gradle/caches/transforms-3/c9c1416cfdc16237773b18cd0425609e/transformed/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/roshish/.gradle/caches/transforms-3/d67fb65d423f69a271e62fa0f5833fa6/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/roshish/.gradle/caches/transforms-3/d67fb65d423f69a271e62fa0f5833fa6/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/roshish/.gradle/caches/transforms-3/03b9b3b952540ee8cedf6c096276d934/transformed/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/roshish/.gradle/caches/transforms-3/03b9b3b952540ee8cedf6c096276d934/transformed/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/roshish/.gradle/caches/transforms-3/937d6edc8055f6701a18eeac1a67afe6/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/roshish/.gradle/caches/transforms-3/937d6edc8055f6701a18eeac1a67afe6/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
+INJECTED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/debug/AndroidManifest.xml
+INJECTED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/debug/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/debug/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/android/app/src/debug/AndroidManifest.xml
+activity#io.flutter.plugins.urllauncher.WebViewActivity
+ADDED from [:url_launcher_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-13:74
+	android:exported
+		ADDED from [:url_launcher_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-37
+	android:theme
+		ADDED from [:url_launcher_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-71
+	android:name
+		ADDED from [:url_launcher_android] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-74
+uses-feature#android.hardware.wifi
+ADDED from [:wifi_iot] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_iot/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-58
+	android:name
+		ADDED from [:wifi_iot] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_iot/intermediates/merged_manifest/debug/AndroidManifest.xml:9:19-55
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [:wifi_iot] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_iot/intermediates/merged_manifest/debug/AndroidManifest.xml:13:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.18.7] /Users/roshish/.gradle/caches/transforms-3/e255c6ce9910a673f2619b479a7d74a8/transformed/jetified-exoplayer-core-2.18.7/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.18.7] /Users/roshish/.gradle/caches/transforms-3/e255c6ce9910a673f2619b479a7d74a8/transformed/jetified-exoplayer-core-2.18.7/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.18.7] /Users/roshish/.gradle/caches/transforms-3/3a633bb9eac75a1461b6fbfc4b0e1113/transformed/jetified-exoplayer-common-2.18.7/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.18.7] /Users/roshish/.gradle/caches/transforms-3/3a633bb9eac75a1461b6fbfc4b0e1113/transformed/jetified-exoplayer-common-2.18.7/AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from [:wifi_iot] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_iot/intermediates/merged_manifest/debug/AndroidManifest.xml:13:22-76
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from [:wifi_iot] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_iot/intermediates/merged_manifest/debug/AndroidManifest.xml:19:5-73
+	android:name
+		ADDED from [:wifi_iot] /Users/roshish/Desktop/Projects/SlashPlus/signage_plus/build/wifi_iot/intermediates/merged_manifest/debug/AndroidManifest.xml:19:22-70
+uses-library#androidx.window.extensions
+ADDED from [androidx.window:window:1.0.0-beta04] /Users/roshish/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0-beta04] /Users/roshish/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0-beta04] /Users/roshish/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+uses-library#androidx.window.sidecar
+ADDED from [androidx.window:window:1.0.0-beta04] /Users/roshish/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0-beta04] /Users/roshish/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0-beta04] /Users/roshish/.gradle/caches/transforms-3/25cee5f028ac2a6b79fd6278ff5b59e2/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+intent#action:name:android.media.browse.MediaBrowserService
+ADDED from [androidx.media2:media2-session:1.2.1] /Users/roshish/.gradle/caches/transforms-3/1c11fcd5d741b7583794ec56efdeaa69/transformed/jetified-media2-session-1.2.1/AndroidManifest.xml:25:9-27:18
+action#android.media.browse.MediaBrowserService
+ADDED from [androidx.media2:media2-session:1.2.1] /Users/roshish/.gradle/caches/transforms-3/1c11fcd5d741b7583794ec56efdeaa69/transformed/jetified-media2-session-1.2.1/AndroidManifest.xml:26:13-79
+	android:name
+		ADDED from [androidx.media2:media2-session:1.2.1] /Users/roshish/.gradle/caches/transforms-3/1c11fcd5d741b7583794ec56efdeaa69/transformed/jetified-media2-session-1.2.1/AndroidManifest.xml:26:21-76
+intent#action:name:androidx.media2.session.MediaSessionService
+ADDED from [androidx.media2:media2-session:1.2.1] /Users/roshish/.gradle/caches/transforms-3/1c11fcd5d741b7583794ec56efdeaa69/transformed/jetified-media2-session-1.2.1/AndroidManifest.xml:28:9-30:18
+action#androidx.media2.session.MediaSessionService
+ADDED from [androidx.media2:media2-session:1.2.1] /Users/roshish/.gradle/caches/transforms-3/1c11fcd5d741b7583794ec56efdeaa69/transformed/jetified-media2-session-1.2.1/AndroidManifest.xml:29:13-82
+	android:name
+		ADDED from [androidx.media2:media2-session:1.2.1] /Users/roshish/.gradle/caches/transforms-3/1c11fcd5d741b7583794ec56efdeaa69/transformed/jetified-media2-session-1.2.1/AndroidManifest.xml:29:21-79
+intent#action:name:androidx.media2.session.MediaLibraryService
+ADDED from [androidx.media2:media2-session:1.2.1] /Users/roshish/.gradle/caches/transforms-3/1c11fcd5d741b7583794ec56efdeaa69/transformed/jetified-media2-session-1.2.1/AndroidManifest.xml:31:9-33:18
+action#androidx.media2.session.MediaLibraryService
+ADDED from [androidx.media2:media2-session:1.2.1] /Users/roshish/.gradle/caches/transforms-3/1c11fcd5d741b7583794ec56efdeaa69/transformed/jetified-media2-session-1.2.1/AndroidManifest.xml:32:13-82
+	android:name
+		ADDED from [androidx.media2:media2-session:1.2.1] /Users/roshish/.gradle/caches/transforms-3/1c11fcd5d741b7583794ec56efdeaa69/transformed/jetified-media2-session-1.2.1/AndroidManifest.xml:32:21-79
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.10.1] /Users/roshish/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.10.1] /Users/roshish/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.10.1] /Users/roshish/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:23:9-81
+permission#com.slashplus.signageplus.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.10.1] /Users/roshish/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.10.1] /Users/roshish/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.10.1] /Users/roshish/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.10.1] /Users/roshish/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.10.1] /Users/roshish/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:26:22-94
+uses-permission#com.slashplus.signageplus.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.10.1] /Users/roshish/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.10.1] /Users/roshish/.gradle/caches/transforms-3/c4988ff80110f75080a936fc6f044848/transformed/core-1.10.1/AndroidManifest.xml:26:22-94
