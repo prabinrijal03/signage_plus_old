@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cached_video_player_plus: ^3.0.3
+  video_player: ^2.9.2
   auto_size_text: ^3.0.0
   audioplayers: ^6.0.0
   app_settings: ^5.1.1
@@ -55,11 +55,16 @@ dependencies:
   weather: ^3.1.0
   widget_marquee: ^0.0.5
   timezone: ^0.10.0
-  bluetooth_thermal_printer: ^0.0.6
+  bluetooth_thermal_printer:
+    git:
+      url: https://github.com/Rajath4/BluetoothThermalPrinter
+      ref: 7abaeba
   esc_pos_utils: ^1.1.0
-  flutter_usb_printer: ^0.1.0+1
+  flutter_usb_printer:
+    git:
+      url: https://github.com/kechankrisna/flutter_usb_printer
+      ref: master
   flutter_tts: ^4.0.2
-  logger: ^2.5.0
 
 dev_dependencies:
   flutter_test:

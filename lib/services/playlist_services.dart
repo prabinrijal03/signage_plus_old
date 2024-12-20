@@ -1,5 +1,6 @@
 import 'dart:collection';
 
+import 'package:flutter/src/material/time.dart';
 import 'package:slashplus/services/hive_services.dart';
 
 import 'utils.dart';
@@ -104,7 +105,12 @@ class PlaylistService {
   }
 
   static Queue<Content> get contents => _contents;
-  static bool get hasAnyForcePlayContent => HiveService().getActiveContents()?.contents.any((element) => element.forcePlay == true) ?? false;
+  static bool get hasAnyForcePlayContent =>
+      HiveService()
+          .getActiveContents()
+          ?.contents
+          .any((element) => element.forcePlay == true) ??
+      false;
 
   // ---------- WARD CONTENTS ----------
 
@@ -132,7 +138,8 @@ class PlaylistService {
     if (_wardContents.isEmpty) return null;
     // If queue is not empty, remove first scrolling text if it is not time to scroll
     while (_wardContents.first.playType == AppConstants.specificTimeRange &&
-        !(_wardContents.first.startTime.isBefore(AppConstants.now) && _wardContents.first.endTime.isAfter(AppConstants.now))) {
+        !(_wardContents.first.startTime.isBefore(AppConstants.now as TimeOfDay) &&
+            _wardContents.first.endTime.isAfter(AppConstants.now as TimeOfDay))) {
       _wardContents.removeFirst();
       // If queue has no scrolling text to be played at the current time, return null
       if (_wardContents.isEmpty) return null;

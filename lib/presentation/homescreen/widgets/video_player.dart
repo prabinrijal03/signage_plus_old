@@ -1,7 +1,6 @@
 import 'dart:io';
-
-import 'package:cached_video_player_plus/cached_video_player_plus.dart';
 import 'package:flutter/material.dart';
+import 'package:video_player/video_player.dart';
 
 import '../../../services/hive_services.dart';
 import '../bloc/contents/contents_bloc.dart';
@@ -19,19 +18,17 @@ class VideoWidget extends StatefulWidget {
 }
 
 class _VideoWidgetState extends State<VideoWidget> {
-  late CachedVideoPlayerPlusController _controller;
+  late VideoPlayerController _controller;
   bool isReady = false;
 
   @override
   void initState() {
     super.initState();
 
-    _controller = CachedVideoPlayerPlusController.file(
+    _controller = VideoPlayerController.file(
         File("${HiveService.dir.path}/video/${widget.video.split("/").last}"),
         videoPlayerOptions: VideoPlayerOptions(
             mixWithOthers: true, allowBackgroundPlayback: true));
-    print(
-        "Video file path: ${HiveService.dir.path}/video/${widget.video.split("/").last}");
 
     _controller.initialize().then((_) => setState(() {
           _controller.setVolume(widget.volume.toDouble() / 100);
@@ -72,9 +69,10 @@ class _VideoWidgetState extends State<VideoWidget> {
               return FittedBox(
                 fit: BoxFit.fill,
                 child: Container(
-                    alignment: Alignment.center,
-                    constraints: constraints,
-                    child: CachedVideoPlayerPlus(_controller)),
+                  alignment: Alignment.center,
+                  constraints: constraints,
+                  child: VideoPlayer(_controller),
+                ),
               );
             },
           )

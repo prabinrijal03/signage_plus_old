@@ -156,7 +156,6 @@ class _TokenButtonWidgetState extends State<TokenButtonWidget> {
                                   String id = dataMap['1']!;
                                   String name = '${dataMap['13']} ${dataMap['12']}';
                                   final slotStart = DateTime.parse(dataMap['5']!);
-
                                   final ApplicantInfoRequest info = ApplicantInfoRequest(
                                     applicationId: id,
                                     applicantName: name,

@@ -1,10 +1,9 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:cached_video_player_plus/cached_video_player_plus.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:video_player/video_player.dart';
 import '../../../core/extensions.dart';
 import 'ward_individual_card.dart';
 import '../../../services/socket_services.dart';
@@ -129,8 +128,10 @@ class _WardWidgetState extends State<WardWidget> {
 
     widget.wardContent.removeWhere((element) =>
         (widget.wardContent.first.playType == AppConstants.specificTimeRange &&
-            (widget.wardContent.first.startTime.isBefore(AppConstants.now) ||
-                widget.wardContent.first.endTime.isAfter(AppConstants.now))));
+            (widget.wardContent.first.startTime
+                    .isBefore(AppConstants.now as TimeOfDay) ||
+                widget.wardContent.first.endTime
+                    .isAfter(AppConstants.now as TimeOfDay))));
     widget.wardContent.shuffle();
 
     if (isForcePlay && forcePlayContent != null) {
@@ -257,14 +258,14 @@ class WardVideoWidget extends StatefulWidget {
 }
 
 class _VideoWidgetState extends State<WardVideoWidget> {
-  late CachedVideoPlayerPlusController _controller;
+  late VideoPlayerController _controller;
   bool isReady = false;
 
   @override
   void initState() {
     super.initState();
 
-    _controller = CachedVideoPlayerPlusController.file(
+    _controller = VideoPlayerController.file(
         File("${HiveService.dir.path}/video/${widget.video.split("/").last}"));
 
     _controller.initialize().then((_) => setState(() {
@@ -295,7 +296,7 @@ class _VideoWidgetState extends State<WardVideoWidget> {
                 child: Container(
                     alignment: Alignment.center,
                     constraints: constraints,
-                    child: CachedVideoPlayerPlus(_controller)),
+                    child: VideoPlayer(_controller)),
               );
             },
           )
@@ -322,14 +323,14 @@ class SingleVideoPlayer extends StatefulWidget {
 }
 
 class _SingleVideoPlayerState extends State<SingleVideoPlayer> {
-  late CachedVideoPlayerPlusController _controller;
+  late VideoPlayerController _controller;
   bool isReady = false;
 
   @override
   void initState() {
     super.initState();
 
-    _controller = CachedVideoPlayerPlusController.file(
+    _controller = VideoPlayerController.file(
         File("${HiveService.dir.path}/video/${widget.video.split("/").last}"));
 
     _controller.initialize().then((_) => setState(() {
@@ -360,7 +361,7 @@ class _SingleVideoPlayerState extends State<SingleVideoPlayer> {
                 child: Container(
                     alignment: Alignment.center,
                     constraints: constraints,
-                    child: CachedVideoPlayerPlus(_controller)),
+                    child: VideoPlayer(_controller)),
               );
             },
           )

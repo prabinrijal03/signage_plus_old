@@ -34,7 +34,7 @@ def keystoreProperties = new Properties()
 
 android {
     namespace 'com.slashplus.signageplus'
-    compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion 34 
     ndkVersion flutter.ndkVersion
 
     compileOptions {

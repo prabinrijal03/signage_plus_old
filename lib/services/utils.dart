@@ -69,7 +69,11 @@ class Utils {
   static const platform = MethodChannel('native_channel');
 
   static Future<bool> checkConnection() {
-    return Dio().head(UrlConstants.baseUrl).timeout(const Duration(seconds: 10)).then((value) => true).catchError((onError) => false);
+    return Dio()
+        .head(UrlConstants.baseUrl)
+        .timeout(const Duration(seconds: 10))
+        .then((value) => true)
+        .catchError((onError) => false);
   }
 
   static Future<String> getCurrentVersion() async {
@@ -81,26 +85,32 @@ class Utils {
   static Future<String?> runADBCommand(String command) async {
     if (!(AppConstants.isRooted ?? false)) return '[Device is not rooted.]';
 
-    final res = await platform.invokeMethod('runAdbCommand', {'command': command});
+    final res =
+        await platform.invokeMethod('runAdbCommand', {'command': command});
     debugPrint("RESULT OF su 0 '$command' : $res");
     return res;
   }
 
   static Future<void> makeDefaultLauncher() async {
-    final result = await Utils.runADBCommand("cmd shortcut get-default-launcher | grep 'Launcher' | cut -d'{' -f2 | cut -d'}' -f1 | cut -d'/' -f1");
-    final defaultLauncher = result.toString().substring(1, result.toString().length - 1);
+    final result = await Utils.runADBCommand(
+        "cmd shortcut get-default-launcher | grep 'Launcher' | cut -d'{' -f2 | cut -d'}' -f1 | cut -d'/' -f1");
+    final defaultLauncher =
+        result.toString().substring(1, result.toString().length - 1);
     debugPrint("DEFAULT LAUNCHER: $defaultLauncher");
 
     if (defaultLauncher != 'com.slashplus.signageplus') {
-      debugPrint(await Utils.runADBCommand("cmd package set-home-activity com.slashplus.signageplus/com.slashplus.signageplus.MainActivity"));
+      debugPrint(await Utils.runADBCommand(
+          "cmd package set-home-activity com.slashplus.signageplus/com.slashplus.signageplus.MainActivity"));
       if (defaultLauncher != 'com.android.tv.settings') {
-        debugPrint(await Utils.runADBCommand("pm disable --user 0 $defaultLauncher"));
+        debugPrint(
+            await Utils.runADBCommand("pm disable --user 0 $defaultLauncher"));
       }
     }
   }
 
   static Future<void> launchApp(String packageName) async {
-    debugPrint(await Utils.runADBCommand("monkey -p $packageName -c android.intent.category.LAUNCHER 1"));
+    debugPrint(await Utils.runADBCommand(
+        "monkey -p $packageName -c android.intent.category.LAUNCHER 1"));
   }
 
   static int getRotation(ForceOrientation orientation) {
@@ -123,7 +133,8 @@ class Utils {
   }
 
   static Future<bool> installApk(String filePath) async {
-    final res = await platform.invokeMethod('installApk', {'filePath': filePath});
+    final res =
+        await platform.invokeMethod('installApk', {'filePath': filePath});
     debugPrint("Apk Installed? : $res");
     return res;
   }
@@ -143,10 +154,12 @@ class Utils {
     return double.parse(percentage.replaceAll('%', '')) / 100;
   }
 
-  static void setDeviceDimentionsByOrientation(BuildContext context, ForceOrientation orientation) {
+  static void setDeviceDimentionsByOrientation(
+      BuildContext context, ForceOrientation orientation) {
     AppConstants.forceOrientation = orientation;
 
-    if (orientation == ForceOrientation.landscapeTop || orientation == ForceOrientation.landscapeBottom) {
+    if (orientation == ForceOrientation.landscapeTop ||
+        orientation == ForceOrientation.landscapeBottom) {
       AppConstants.deviceWidth = MediaQuery.of(context).size.width;
       AppConstants.deviceHeight = MediaQuery.of(context).size.height;
     } else {
@@ -181,7 +194,8 @@ class Utils {
     }
   }
 
-  static Future<void> downloadContents(d.Donwload download, FetchContents fetchContents) async {
+  static Future<void> downloadContents(
+      d.Donwload download, FetchContents fetchContents) async {
     final result = await fetchContents.fetchUrls(const Params());
     final remoteContents = result.fold((left) => null, (right) => right);
 
@@ -195,14 +209,21 @@ class Utils {
 
       if (File("${dir.path}/image/$filename").existsSync()) return;
       print("Downloading $filename and storing in ${dir.path}/image/$filename");
-      final result = await download(d.Params(url: c.url, path: '${dir.path}/image/$filename'));
+      final result = await download(
+          d.Params(url: c.url, path: '${dir.path}/image/$filename'));
       await result.fold((l) {
         debugPrint("ERRRRORRRR ::: ${l.message}");
       }, (r) async {
         // Send Image Download Acknowledge to Server
-        await fetchContents.sendContentRemarks(RemarkParams(c.id, AppConstants.deviceId!, c.url,
-            HiveService().getStoredDateTime()?.toIso8601String() ?? DateTime.now().toIso8601String(), RemarkConstants.firstDownload));
-        debugPrint('Downloaded $filename stored in ${dir.path}/image/$filename');
+        await fetchContents.sendContentRemarks(RemarkParams(
+            c.id,
+            AppConstants.deviceId!,
+            c.url,
+            HiveService().getStoredDateTime()?.toIso8601String() ??
+                DateTime.now().toIso8601String(),
+            RemarkConstants.firstDownload));
+        debugPrint(
+            'Downloaded $filename stored in ${dir.path}/image/$filename');
       });
     });
 
@@ -210,29 +231,38 @@ class Utils {
       final filename = c.url.split('/').last;
 
       if (File("${dir.path}/video/$filename").existsSync()) return;
-      final result = await download(d.Params(url: c.url, path: '${dir.path}/video/$filename'));
+      final result = await download(
+          d.Params(url: c.url, path: '${dir.path}/video/$filename'));
       await result.fold((l) {
         debugPrint(l.message);
       }, (r) async {
         final videoFilePath = "${dir.path}/video/$filename";
 
-        final thumbnail = await VideoCompress.getByteThumbnail(videoFilePath, quality: 100, position: 10);
+        final thumbnail = await VideoCompress.getByteThumbnail(videoFilePath,
+            quality: 100, position: 10);
 
         // Save the image bytes to a file
         final imageFile = File("${dir.path}/video/$filename.png");
         await imageFile.writeAsBytes(thumbnail?.toList() ?? []);
 
         // Send Video Download Acknowledge to Server
-        await fetchContents.sendContentRemarks(RemarkParams(c.id, AppConstants.deviceId!, c.url,
-            HiveService().getStoredDateTime()?.toIso8601String() ?? DateTime.now().toIso8601String(), RemarkConstants.firstDownload));
-        debugPrint('Downloaded $filename stored in ${dir.path}/video/$filename');
+        await fetchContents.sendContentRemarks(RemarkParams(
+            c.id,
+            AppConstants.deviceId!,
+            c.url,
+            HiveService().getStoredDateTime()?.toIso8601String() ??
+                DateTime.now().toIso8601String(),
+            RemarkConstants.firstDownload));
+        debugPrint(
+            'Downloaded $filename stored in ${dir.path}/video/$filename');
       });
     });
 
     await Future.wait([...imageDownloads, ...videoDownloads]);
   }
 
-  static Future<void> downloadWardContents(d.Donwload download, List<String> imageUrls, List<String> videoUrls) async {
+  static Future<void> downloadWardContents(d.Donwload download,
+      List<String> imageUrls, List<String> videoUrls) async {
     // Get application directory
     final dir = HiveService.dir;
 
@@ -240,11 +270,13 @@ class Utils {
       final filename = c.split('/').last;
 
       if (File("${dir.path}/image/$filename").existsSync()) return;
-      final result = await download.call(d.Params(url: c, path: '${dir.path}/image/$filename'));
+      final result = await download
+          .call(d.Params(url: c, path: '${dir.path}/image/$filename'));
       await result.fold((l) {
         debugPrint(l.message);
       }, (r) async {
-        debugPrint('Downloaded $filename stored in ${dir.path}/image/$filename');
+        debugPrint(
+            'Downloaded $filename stored in ${dir.path}/image/$filename');
       });
     });
 
@@ -252,19 +284,22 @@ class Utils {
       final filename = c.split('/').last;
 
       if (File("${dir.path}/video/$filename").existsSync()) return;
-      final result = await download.call(d.Params(url: c, path: '${dir.path}/video/$filename'));
+      final result = await download
+          .call(d.Params(url: c, path: '${dir.path}/video/$filename'));
       await result.fold((l) {
         debugPrint(l.message);
       }, (r) async {
         final videoFilePath = "${dir.path}/video/$filename";
 
-        final thumbnail = await VideoCompress.getByteThumbnail(videoFilePath, quality: 100, position: 10);
+        final thumbnail = await VideoCompress.getByteThumbnail(videoFilePath,
+            quality: 100, position: 10);
 
         // Save the image bytes to a file
         final imageFile = File("${dir.path}/video/$filename.png");
         await imageFile.writeAsBytes(thumbnail?.toList() ?? []);
 
-        debugPrint('Downloaded $filename stored in ${dir.path}/video/$filename');
+        debugPrint(
+            'Downloaded $filename stored in ${dir.path}/video/$filename');
       });
     });
 
@@ -285,7 +320,8 @@ class Utils {
     if (File("${dir.path}/apk/$filename").existsSync()) {
       File("${dir.path}/apk/$filename").deleteSync();
     }
-    final result = await download.call(d.Params(url: versionData.versionUrl, path: '${dir.path}/apk/$filename'));
+    final result = await download.call(d.Params(
+        url: versionData.versionUrl, path: '${dir.path}/apk/$filename'));
     await result.fold((l) {
       debugPrint(l.message);
     }, (r) async {
@@ -293,7 +329,8 @@ class Utils {
         File file = File("${dir.path}/apk/update_info.txt");
         await file.writeAsString(jsonEncode(versionData.toJson()));
 
-        debugPrint('Downloaded $filename stored in ${dir.path}/apk/$filename with version info in ${dir.path}/apk/update_info.txt');
+        debugPrint(
+            'Downloaded $filename stored in ${dir.path}/apk/$filename with version info in ${dir.path}/apk/update_info.txt');
 
         if (AppConstants.isRooted ?? false) {
           await Utils.launchApp('com.slashplus.signage_updater');
@@ -306,13 +343,16 @@ class Utils {
 
         HiveService().addCurrentVersionIdToBox(versionData.id);
         await Future.wait([
-          getInstance<s.SetVersion>().call(s.Params(deviceId: HiveService().getDeviceId() ?? '', versionId: versionData.id)),
+          getInstance<s.SetVersion>().call(s.Params(
+              deviceId: HiveService().getDeviceId() ?? '',
+              versionId: versionData.id)),
           // Content ID is "version" in the backend database
           getInstance<FetchContents>().sendContentRemarks(RemarkParams(
               "version",
               HiveService().getDeviceId() ?? '',
               versionData.versionName,
-              HiveService().getStoredDateTime()?.toIso8601String() ?? DateTime.now().toIso8601String(),
+              HiveService().getStoredDateTime()?.toIso8601String() ??
+                  DateTime.now().toIso8601String(),
               "App Updated to ${versionData.versionName} successfully"))
         ]);
       }
@@ -355,20 +395,25 @@ class Utils {
   }
 
   static Image getFlagFromCurrencyCode(String currencyCode, {int flex = 1}) {
-    return Image.asset('assets/currency/${currencyCode.toLowerCase()}.png', width: flex * 50, height: flex * 50);
+    return Image.asset('assets/currency/${currencyCode.toLowerCase()}.png',
+        width: flex * 50, height: flex * 50);
   }
 
-  static String generateLogId(String deviceId, String contentId, String playTime) {
+  static String generateLogId(
+      String deviceId, String contentId, String playTime) {
     Random random = Random();
-    return const Uuid().v5("00000000-0000-0000-0000-000000000000", "$deviceId$contentId$playTime${random.nextInt(1000)}");
+    return const Uuid().v5("00000000-0000-0000-0000-000000000000",
+        "$deviceId$contentId$playTime${random.nextInt(1000)}");
   }
 
-  static Future<void> sendScreenshot(Uint8List? screenshotData, String token) async {
+  static Future<void> sendScreenshot(
+      Uint8List? screenshotData, String token) async {
     if (screenshotData == null) return;
     String base64Image = base64Encode(screenshotData);
 
     // Send Screenshot to Server
-    final result = await getInstance<FetchContents>().sendScreenshot(ScreenshotParam(base64Image));
+    final result = await getInstance<FetchContents>()
+        .sendScreenshot(ScreenshotParam(base64Image));
     result.fold((l) {
       SocketService().sendScreenshot(false, l.message, token);
       debugPrint("Screenshot failed to send. Error : ${l.message}");
@@ -409,8 +454,10 @@ class Utils {
     await Future.wait(
       [
         HiveService.clear(),
-        if (Directory("${HiveService.dir.path}/video").existsSync()) Directory("${HiveService.dir.path}/video").delete(recursive: true),
-        if (Directory("${HiveService.dir.path}/image").existsSync()) Directory("${HiveService.dir.path}/image").delete(recursive: true),
+        if (Directory("${HiveService.dir.path}/video").existsSync())
+          Directory("${HiveService.dir.path}/video").delete(recursive: true),
+        if (Directory("${HiveService.dir.path}/image").existsSync())
+          Directory("${HiveService.dir.path}/image").delete(recursive: true),
       ],
     );
 
@@ -458,7 +505,8 @@ class Utils {
   //   }
   // }
 
-  static Future<bool> printFeedbackTicket(String ticketNumber, String deviceName) async {
+  static Future<bool> printFeedbackTicket(
+      String ticketNumber, String deviceName) async {
     try {
       List<int> bytes = await getFeedbackTicket(ticketNumber, deviceName);
       final writeBytes = Uint8List.fromList(bytes);
@@ -469,7 +517,8 @@ class Utils {
     }
   }
 
-  static Future<List<int>> getFeedbackTicket(String ticketNumber, String deviceName) async {
+  static Future<List<int>> getFeedbackTicket(
+      String ticketNumber, String deviceName) async {
     List<int> bytes = [];
     CapabilityProfile profile = await CapabilityProfile.load();
     final generator = Generator(PaperSize.mm80, profile);
@@ -481,17 +530,34 @@ class Utils {
           width: PosTextSize.size2,
         ));
 
-    bytes += generator.text(deviceName, styles: const PosStyles(align: PosAlign.center), linesAfter: 1);
-    bytes += generator.text("Feedback Ticket", styles: const PosStyles(align: PosAlign.center, height: PosTextSize.size2, width: PosTextSize.size2));
-    bytes += generator.text("Reference Number", styles: const PosStyles(align: PosAlign.center, height: PosTextSize.size1, width: PosTextSize.size1));
+    bytes += generator.text(deviceName,
+        styles: const PosStyles(align: PosAlign.center), linesAfter: 1);
+    bytes += generator.text("Feedback Ticket",
+        styles: const PosStyles(
+            align: PosAlign.center,
+            height: PosTextSize.size2,
+            width: PosTextSize.size2));
+    bytes += generator.text("Reference Number",
+        styles: const PosStyles(
+            align: PosAlign.center,
+            height: PosTextSize.size1,
+            width: PosTextSize.size1));
     bytes += generator.text(ticketNumber,
-        styles: const PosStyles(align: PosAlign.center, height: PosTextSize.size4, width: PosTextSize.size4, bold: true), linesAfter: 1);
+        styles: const PosStyles(
+            align: PosAlign.center,
+            height: PosTextSize.size4,
+            width: PosTextSize.size4,
+            bold: true),
+        linesAfter: 1);
 
-    bytes += generator.text('Thank you!', styles: const PosStyles(align: PosAlign.center, bold: true));
+    bytes += generator.text('Thank you!',
+        styles: const PosStyles(align: PosAlign.center, bold: true));
 
-    bytes += generator.text(AppConstants.now.toLocal().toString(), styles: const PosStyles(align: PosAlign.center));
+    bytes += generator.text(AppConstants.now.toLocal().toString(),
+        styles: const PosStyles(align: PosAlign.center));
 
-    bytes += generator.text('Hope you have a great day ahead!', styles: const PosStyles(align: PosAlign.center, bold: false));
+    bytes += generator.text('Hope you have a great day ahead!',
+        styles: const PosStyles(align: PosAlign.center, bold: false));
     bytes += generator.cut();
     return bytes;
   }
@@ -601,7 +667,8 @@ class Utils {
   //   return bytes;
   // }
 
-  static Future<List<int>> getTokenTicket(String deviceName, String tokenNumber, String slotTime, bool onTime) async {
+  static Future<List<int>> getTokenTicket(String deviceName, String tokenNumber,
+      String slotTime, bool onTime) async {
     List<int> bytes = [];
     CapabilityProfile profile = await CapabilityProfile.load();
     final generator = Generator(PaperSize.mm80, profile);
@@ -612,30 +679,48 @@ class Utils {
           height: PosTextSize.size2,
           width: PosTextSize.size2,
         ));
-    bytes += generator.text("Token Number", styles: const PosStyles(align: PosAlign.center, height: PosTextSize.size1, width: PosTextSize.size1));
+    bytes += generator.text("Token Number",
+        styles: const PosStyles(
+            align: PosAlign.center,
+            height: PosTextSize.size1,
+            width: PosTextSize.size1));
     bytes += generator.text(tokenNumber,
-        styles: const PosStyles(align: PosAlign.center, height: PosTextSize.size4, width: PosTextSize.size4, bold: true), linesAfter: 2);
+        styles: const PosStyles(
+            align: PosAlign.center,
+            height: PosTextSize.size4,
+            width: PosTextSize.size4,
+            bold: true),
+        linesAfter: 2);
 
-    bytes +=
-        generator.text('Time Slot: ${DateTime.parse(slotTime).toLocal().toString()}', styles: const PosStyles(align: PosAlign.center), linesAfter: 1);
+    bytes += generator.text(
+        'Time Slot: ${DateTime.parse(slotTime).toLocal().toString()}',
+        styles: const PosStyles(align: PosAlign.center),
+        linesAfter: 1);
 
     if (!onTime) {
-      bytes += generator.text('Off time penalty', styles: const PosStyles(align: PosAlign.center, bold: true));
+      bytes += generator.text('Off time penalty',
+          styles: const PosStyles(align: PosAlign.center, bold: true));
     }
 
-    bytes += generator.text('Thank you!', styles: const PosStyles(align: PosAlign.center, bold: true));
+    bytes += generator.text('Thank you!',
+        styles: const PosStyles(align: PosAlign.center, bold: true));
 
-    bytes += generator.text(AppConstants.now.toLocal().toString(), styles: const PosStyles(align: PosAlign.center));
+    bytes += generator.text(AppConstants.now.toLocal().toString(),
+        styles: const PosStyles(align: PosAlign.center));
 
-    bytes += generator.text('Hope you have a great day ahead!', styles: const PosStyles(align: PosAlign.center, bold: false), linesAfter: 2);
+    bytes += generator.text('Hope you have a great day ahead!',
+        styles: const PosStyles(align: PosAlign.center, bold: false),
+        linesAfter: 2);
 
     bytes += generator.cut();
     return bytes;
   }
 
-  static Future<bool> printTokenTicket(String deviceName, String tokenNumber, String slotTime, bool onTime) async {
+  static Future<bool> printTokenTicket(String deviceName, String tokenNumber,
+      String slotTime, bool onTime) async {
     try {
-      List<int> bytes = await getTokenTicket(deviceName, tokenNumber, slotTime, onTime);
+      List<int> bytes =
+          await getTokenTicket(deviceName, tokenNumber, slotTime, onTime);
       final writeBytes = Uint8List.fromList(bytes);
       // final res = await platform.invokeMethod<int>('write', {'byteArray': writeBytes});
       // final res = await FlutterUsbPrinter().write(writeBytes);
@@ -663,7 +748,11 @@ class Utils {
       int hundredsDigit = number ~/ 100;
       int remaining = number % 100;
 
-      final result = [hundredsDigit, 100, ...splitIntegerWithPlaceValues(remaining)];
+      final result = [
+        hundredsDigit,
+        100,
+        ...splitIntegerWithPlaceValues(remaining)
+      ];
       result.removeWhere((element) => element == 0);
       if (result.length > 1 && result[0] == 1) {
         result.removeAt(0);
@@ -675,7 +764,8 @@ class Utils {
   static Future<DateTime> getTimeFromNTP() async {
     try {
       // Fetch the current time from an NTP server
-      DateTime currentTime = await NTP.now(lookUpAddress: UrlConstants.timeServerUrl);
+      DateTime currentTime =
+          await NTP.now(lookUpAddress: UrlConstants.timeServerUrl);
 
       // Create a time zone for Kathmandu (UTC+5:45)
       final kathmanduTimeZone = getLocation('Asia/Kathmandu');
@@ -705,20 +795,32 @@ class Utils {
     if (!scrollText.status) return false;
 
     final scrollTimer = scrollText.scrollTimer;
-    final now = DateTime(AppConstants.now.year, AppConstants.now.month, AppConstants.now.day, AppConstants.now.hour, AppConstants.now.minute);
+    final now = DateTime(AppConstants.now.year, AppConstants.now.month,
+        AppConstants.now.day, AppConstants.now.hour, AppConstants.now.minute);
 
     if (scrollText.scrollTimer.type == AppConstants.dateRangeOnly) {
-      final startDate = DateTime(scrollTimer.startDate.year, scrollTimer.startDate.month, scrollTimer.startDate.day, scrollTimer.startTime.hour,
+      final startDate = DateTime(
+          scrollTimer.startDate.year,
+          scrollTimer.startDate.month,
+          scrollTimer.startDate.day,
+          scrollTimer.startTime.hour,
           scrollTimer.startTime.minute);
       final endDate = DateTime(
-          scrollTimer.endDate.year, scrollTimer.endDate.month, scrollTimer.endDate.day, scrollTimer.endTime.hour, scrollTimer.endTime.minute);
+          scrollTimer.endDate.year,
+          scrollTimer.endDate.month,
+          scrollTimer.endDate.day,
+          scrollTimer.endTime.hour,
+          scrollTimer.endTime.minute);
 
       return now.isAfter(startDate) && now.isBefore(endDate);
     } else if (scrollText.scrollTimer.type == AppConstants.specificTimeRange) {
-      final startTime = DateTime(now.year, now.month, now.day, scrollTimer.startTime.hour, scrollTimer.startTime.minute);
-      final endTime = DateTime(now.year, now.month, now.day, scrollTimer.endTime.hour, scrollTimer.endTime.minute);
+      final startTime = DateTime(now.year, now.month, now.day,
+          scrollTimer.startTime.hour, scrollTimer.startTime.minute);
+      final endTime = DateTime(now.year, now.month, now.day,
+          scrollTimer.endTime.hour, scrollTimer.endTime.minute);
 
-      return (now.isAfter(startTime) || now.isAtSameMomentAs(startTime)) && (now.isBefore(endTime) || now.isAtSameMomentAs(endTime));
+      return (now.isAfter(startTime) || now.isAtSameMomentAs(startTime)) &&
+          (now.isBefore(endTime) || now.isAtSameMomentAs(endTime));
     } else {
       return false;
     }
@@ -726,11 +828,17 @@ class Utils {
 
   static bool isContentActive(Content content) {
     if (!content.status) return false;
-    final now = DateTime(AppConstants.now.year, AppConstants.now.month, AppConstants.now.day, AppConstants.now.hour, AppConstants.now.minute);
+    final now = DateTime(AppConstants.now.year, AppConstants.now.month,
+        AppConstants.now.day, AppConstants.now.hour, AppConstants.now.minute);
     if (content.playType == AppConstants.dateRangeOnly) {
-      final startDate =
-          DateTime(content.startDate.year, content.startDate.month, content.startDate.day, content.startTime.hour, content.startTime.minute);
-      final endDate = DateTime(content.endDate.year, content.endDate.month, content.endDate.day, content.endTime.hour, content.endTime.minute);
+      final startDate = DateTime(
+          content.startDate.year,
+          content.startDate.month,
+          content.startDate.day,
+          content.startTime.hour,
+          content.startTime.minute);
+      final endDate = DateTime(content.endDate.year, content.endDate.month,
+          content.endDate.day, content.endTime.hour, content.endTime.minute);
 
       // print("""
       //   Content Info
@@ -755,8 +863,10 @@ class Utils {
       //   """);
       return now.isAfter(startDate) && now.isBefore(endDate);
     } else if (content.playType == AppConstants.specificTimeRange) {
-      final startTime = DateTime(now.year, now.month, now.day, content.startTime.hour, content.startTime.minute);
-      final endTime = DateTime(now.year, now.month, now.day, content.endTime.hour, content.endTime.minute);
+      final startTime = DateTime(now.year, now.month, now.day,
+          content.startTime.hour, content.startTime.minute);
+      final endTime = DateTime(now.year, now.month, now.day,
+          content.endTime.hour, content.endTime.minute);
       // print("""
       //   Content Info
       //   Name: ${content.name}
@@ -780,7 +890,8 @@ class Utils {
       //           -------------------------------------------------
       //                   -------------------------------------------------
       //   """);
-      return (now.isAfter(startTime) || now.isAtSameMomentAs(startTime)) && (now.isBefore(endTime) || now.isAtSameMomentAs(endTime));
+      return (now.isAfter(startTime) || now.isAtSameMomentAs(startTime)) &&
+          (now.isBefore(endTime) || now.isAtSameMomentAs(endTime));
     } else {
       return false;
     }
@@ -799,7 +910,10 @@ class Utils {
             const SizedBox(width: 10),
             Text(
               message,
-              style: const TextStyle(color: ColorManager.white, fontSize: 20, fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                  color: ColorManager.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
           ],

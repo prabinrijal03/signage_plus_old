@@ -41,7 +41,8 @@ class FetchContents implements UseCase<Contents, Params> {
     );
   }
 
-  Future<Either<Failure, List<String>>> syncPlayLog(PlayLogSyncParam params) async {
+  Future<Either<Failure, List<String>>> syncPlayLog(
+      PlayLogSyncParam params) async {
     return await _repository.syncPlayLog(params.playLogSyncs);
   }
 
