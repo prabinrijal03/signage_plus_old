@@ -8,13 +8,13 @@ import '../services/utils.dart';
 extension TimeOfDayExtension on TimeOfDay {
   String get formatTimeOfDay => "${hour.toString().padLeft(2, '0')}:${minute.toString().padLeft(2, '0')}";
 
-  bool isAfter(DateTime dateTime) {
+  bool isAfterTime(DateTime dateTime) {
     final now = HiveService().getStoredDateTime() ?? DateTime.now();
     final time = DateTime(now.year, now.month, now.day, hour, minute);
     return time.isAfter(dateTime);
   }
 
-  bool isBefore(DateTime dateTime) {
+  bool isBeforeTime(DateTime dateTime) {
     final now = HiveService().getStoredDateTime() ?? DateTime.now();
     final time = DateTime(now.year, now.month, now.day, hour, minute);
     return time.isBefore(dateTime);

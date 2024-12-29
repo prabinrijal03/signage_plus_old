@@ -126,12 +126,11 @@ class _WardWidgetState extends State<WardWidget> {
       endIndex.clamp(0, widget.wardInfo.length),
     );
 
-    widget.wardContent.removeWhere((element) =>
-        (widget.wardContent.first.playType == AppConstants.specificTimeRange &&
-            (widget.wardContent.first.startTime
-                    .isBefore(AppConstants.now as TimeOfDay) ||
-                widget.wardContent.first.endTime
-                    .isAfter(AppConstants.now as TimeOfDay))));
+    widget.wardContent.removeWhere((element) => (widget
+                .wardContent.first.playType ==
+            AppConstants.specificTimeRange &&
+        (widget.wardContent.first.startTime.isBeforeTime(AppConstants.now) ||
+            widget.wardContent.first.endTime.isAfterTime(AppConstants.now))));
     widget.wardContent.shuffle();
 
     if (isForcePlay && forcePlayContent != null) {
