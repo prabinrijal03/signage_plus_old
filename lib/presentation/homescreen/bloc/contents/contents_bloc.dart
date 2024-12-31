@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:slashplus/data/datasource/remote_datasource.dart';
 import '../token/token_bloc.dart';
 
 import '../../../../data/model/contents.dart';
@@ -23,12 +24,28 @@ class ContentsBloc extends Bloc<ContentsEvent, ContentsState> {
   final TokenBloc tokenBloc;
   Timer? contentTimer;
   bool isCancelled = false;
+  final RemoteDatasource remoteDatasource;
 
-  ContentsBloc({required this.fetchContents, required this.download, required this.tokenBloc}) : super(ContentsInitial()) {
+  ContentsBloc(
+      {required this.fetchContents,
+      required this.download,
+      required this.tokenBloc,
+      required this.remoteDatasource})
+      : super(ContentsInitial()) {
     void startDelayedAction(int displayTime) {
       contentTimer = Timer(Duration(seconds: displayTime), () {
         add(const ChangeContent());
       });
+    }
+
+    Future<void> fetchContentBeforeEnd(String orgId, String contentId) async {
+      try {
+        await remoteDatasource.contentsForcePlay(orgId, contentId);
+        print(
+            'fetchContentBeforeEnd called with orgId: $orgId, contentId: $contentId');
+      } catch (e) {
+        print('Error occurred while fetching content before end: $e');
+      }
     }
 
     on<Initial>((event, emit) async {
@@ -42,7 +59,9 @@ class ContentsBloc extends Bloc<ContentsEvent, ContentsState> {
         await Utils.downloadContents(download, fetchContents);
         // Add active contents to queue
         // Active contents are contents that are either date range only or are currently active
-        final activeContents = r.contents.where((element) => Utils.isContentActive(element)).toList();
+        final activeContents = r.contents
+            .where((element) => Utils.isContentActive(element))
+            .toList();
         PlaylistService.addContent(activeContents);
         // Emit first content
         final content = PlaylistService.popContent();
@@ -54,6 +73,18 @@ class ContentsBloc extends Bloc<ContentsEvent, ContentsState> {
           // If the content has no video, start a timer to change content after display time
           if (!content.layout.hasVideo!) {
             startDelayedAction(content.displayTime);
+          }
+          final displayTime = content.displayTime;
+          final forcePlayEnabled = HiveService().getForcePlayStatus();
+          if (forcePlayEnabled) {
+            Timer(Duration(seconds: displayTime - 1), () {
+              final orgId = HiveService().getOrganizationId();
+              if (orgId == null) return;
+              final contentId = content.id;
+              fetchContentBeforeEnd(orgId, contentId);
+              print(
+                  'fetchContentBeforeEnd called with orgId: $orgId, contentId: $contentId');
+            });
           }
           // emit first content
           return emit(LoadedContents(content));
@@ -81,7 +112,9 @@ class ContentsBloc extends Bloc<ContentsEvent, ContentsState> {
         // If no content in database, emit empty content
         if (contents == null) return emit(EmptyContents());
         // Active contents are contents that are either date range only or currently active
-        final activeContents = contents.contents.where((element) => Utils.isContentActive(element)).toList();
+        final activeContents = contents.contents
+            .where((element) => Utils.isContentActive(element))
+            .toList();
         // If no active content in database, emit empty content
         if (activeContents.isEmpty) return emit(EmptyContents());
         // Add contents to queue
@@ -112,7 +145,8 @@ class ContentsBloc extends Bloc<ContentsEvent, ContentsState> {
       // Update content in database
       HiveService().updateContentInBox(event.content);
       // if content currently displayed is the updated content, update it
-      if (state is LoadedContents && (state as LoadedContents).content.id == event.content.id) {
+      if (state is LoadedContents &&
+          (state as LoadedContents).content.id == event.content.id) {
         return;
       }
       // If current content is not the updated content, update it in queue
@@ -125,7 +159,8 @@ class ContentsBloc extends Bloc<ContentsEvent, ContentsState> {
 
     on<DeleteContent>((event, emit) {
       // If current content is not the deleted content, remove it from queue
-      if (state is LoadedContents && (state as LoadedContents).content.id != event.id) {
+      if (state is LoadedContents &&
+          (state as LoadedContents).content.id != event.id) {
         PlaylistService.removeContent(event.id);
       } else {
         // If current content is the deleted content, emit next scrolling text
@@ -137,7 +172,10 @@ class ContentsBloc extends Bloc<ContentsEvent, ContentsState> {
 
     on<ForcePlay>((event, emit) async {
       if (state is LoadedContents || state is EmptyContents) {
-        final content = HiveService().getAllContents()!.contents.firstWhereOrNull((element) => element.id == event.contentId);
+        final content = HiveService()
+            .getAllContents()!
+            .contents
+            .firstWhereOrNull((element) => element.id == event.contentId);
         if (content == null) return;
         if (!content.layout.hasVideo!) {
           startDelayedAction(content.displayTime);

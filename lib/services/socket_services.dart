@@ -30,79 +30,106 @@ class SocketService {
   late DeviceInfo deviceInfo;
 
   // Padding Stream
-  final StreamController<String> _paddingController = StreamController<String>.broadcast();
+  final StreamController<String> _paddingController =
+      StreamController<String>.broadcast();
   Stream<String> get paddingStream => _paddingController.stream;
 
   // Stop Duration Stream
-  final StreamController<String> _stopDurationController = StreamController<String>.broadcast();
+  final StreamController<String> _stopDurationController =
+      StreamController<String>.broadcast();
   Stream<String> get stopDurationStream => _stopDurationController.stream;
 
   // Scroll Texts Stream
-  final StreamController<Either<ScrollTexts, String>> _scrollTextController = StreamController<Either<ScrollTexts, String>>.broadcast();
-  Stream<Either<ScrollTexts, String>> get scrollTextStream => _scrollTextController.stream;
+  final StreamController<Either<ScrollTexts, String>> _scrollTextController =
+      StreamController<Either<ScrollTexts, String>>.broadcast();
+  Stream<Either<ScrollTexts, String>> get scrollTextStream =>
+      _scrollTextController.stream;
 
   // Update Scroll Texts Stream
-  final StreamController<ScrollTexts> _updateScrollTextController = StreamController<ScrollTexts>.broadcast();
-  Stream<ScrollTexts> get updateScrollTextStream => _updateScrollTextController.stream;
+  final StreamController<ScrollTexts> _updateScrollTextController =
+      StreamController<ScrollTexts>.broadcast();
+  Stream<ScrollTexts> get updateScrollTextStream =>
+      _updateScrollTextController.stream;
 
   // Logout Stream
-  final StreamController<int> _logoutStreamController = StreamController<int>.broadcast();
+  final StreamController<int> _logoutStreamController =
+      StreamController<int>.broadcast();
   Stream<int> get logout => _logoutStreamController.stream;
 
   // Logout Stream
-  final StreamController<bool> _deviceStatusStreamController = StreamController<bool>.broadcast();
+  final StreamController<bool> _deviceStatusStreamController =
+      StreamController<bool>.broadcast();
   Stream<bool> get deviceStatus => _deviceStatusStreamController.stream;
 
   // Command Stream
-  final StreamController<List> _commandStreamController = StreamController<List>.broadcast();
+  final StreamController<List> _commandStreamController =
+      StreamController<List>.broadcast();
   Stream<List> get command => _commandStreamController.stream;
 
   // Content Stream
-  final StreamController<Either<Content, String>> _contentController = StreamController<Either<Content, String>>.broadcast();
-  Stream<Either<Content, String>> get contentStream => _contentController.stream;
+  final StreamController<Either<Content, String>> _contentController =
+      StreamController<Either<Content, String>>.broadcast();
+  Stream<Either<Content, String>> get contentStream =>
+      _contentController.stream;
 
   // Force Play Stream
-  final StreamController<String> _forcePlayController = StreamController<String>.broadcast();
+  final StreamController<String> _forcePlayController =
+      StreamController<String>.broadcast();
   Stream<String> get forcePlay => _forcePlayController.stream;
 
   // Force Play Stream
-  final StreamController<String> _forcePlayWardController = StreamController<String>.broadcast();
+  final StreamController<String> _forcePlayWardController =
+      StreamController<String>.broadcast();
   Stream<String> get forcePlayWard => _forcePlayWardController.stream;
 
   // Ward Details Stream
-  final StreamController<Either<WardDetails, WardDetails>> _wardDetailsController = StreamController<Either<WardDetails, WardDetails>>.broadcast();
-  Stream<Either<WardDetails, WardDetails>> get wardDetailsStream => _wardDetailsController.stream;
+  final StreamController<Either<WardDetails, WardDetails>>
+      _wardDetailsController =
+      StreamController<Either<WardDetails, WardDetails>>.broadcast();
+  Stream<Either<WardDetails, WardDetails>> get wardDetailsStream =>
+      _wardDetailsController.stream;
 
   // Ward Settings Stream
-  final StreamController<WardSettings> _wardSettingsController = StreamController<WardSettings>.broadcast();
+  final StreamController<WardSettings> _wardSettingsController =
+      StreamController<WardSettings>.broadcast();
   Stream<WardSettings> get wardSettings => _wardSettingsController.stream;
 
   // Ward Delete Stream
-  final StreamController<Map<String, dynamic>> _deleteWardController = StreamController<Map<String, dynamic>>.broadcast();
-  Stream<Map<String, dynamic>> get deleteWardStream => _deleteWardController.stream;
+  final StreamController<Map<String, dynamic>> _deleteWardController =
+      StreamController<Map<String, dynamic>>.broadcast();
+  Stream<Map<String, dynamic>> get deleteWardStream =>
+      _deleteWardController.stream;
 
   // Update Content Stream
-  final StreamController<Content> _updateContentController = StreamController<Content>.broadcast();
+  final StreamController<Content> _updateContentController =
+      StreamController<Content>.broadcast();
   Stream<Content> get updateContentStream => _updateContentController.stream;
 
   // Device Stream
-  final StreamController<Either<DeviceInfo, DeviceInfo>> _deviceController = StreamController<Either<DeviceInfo, DeviceInfo>>.broadcast();
-  Stream<Either<DeviceInfo, DeviceInfo>> get deviceStream => _deviceController.stream;
+  final StreamController<Either<DeviceInfo, DeviceInfo>> _deviceController =
+      StreamController<Either<DeviceInfo, DeviceInfo>>.broadcast();
+  Stream<Either<DeviceInfo, DeviceInfo>> get deviceStream =>
+      _deviceController.stream;
 
   // Custom User Stream
-  final StreamController<Either<CustomUser, String>> _customUserController = StreamController<Either<CustomUser, String>>.broadcast();
-  Stream<Either<CustomUser, String>> get addCustomUser => _customUserController.stream;
+  final StreamController<Either<CustomUser, String>> _customUserController =
+      StreamController<Either<CustomUser, String>>.broadcast();
+  Stream<Either<CustomUser, String>> get addCustomUser =>
+      _customUserController.stream;
 
   // Custom User Condition Stream
-  final StreamController<List> _customUserConditionController = StreamController<List>.broadcast();
+  final StreamController<List> _customUserConditionController =
+      StreamController<List>.broadcast();
   Stream<List> get customUserCondition => _customUserConditionController.stream;
 
   // Ward Order Stream
-  final StreamController<Map<String, dynamic>> _wardOrderController = StreamController<Map<String, dynamic>>.broadcast();
+  final StreamController<Map<String, dynamic>> _wardOrderController =
+      StreamController<Map<String, dynamic>>.broadcast();
   Stream<Map<String, dynamic>> get wardOrder => _wardOrderController.stream;
 
   void emitCommandResult(String sessionId, String result) {
-    debugPrint("Emiting to 'command' with data [{sessionId: $sessionId, command: 106, result: $result}]");
+    debugPrint(
+        "Emiting to 'command' with data [{sessionId: $sessionId, command: 106, result: $result}]");
     socket?.emit('command', [
       {
         'sessionId': sessionId,
@@ -116,8 +143,10 @@ class SocketService {
     // Initialize socket
     socket = io.io(
       UrlConstants.baseUrl,
-      io.OptionBuilder()
-          .setTransports(['websocket']).setAuth({"Authorization": "Bearer ${HiveService().getAccessToken()}", "Device": "mobile"}).build(),
+      io.OptionBuilder().setTransports(['websocket']).setAuth({
+        "Authorization": "Bearer ${HiveService().getAccessToken()}",
+        "Device": "mobile"
+      }).build(),
     );
 
     socket?.onConnect((data) {
@@ -241,6 +270,7 @@ class SocketService {
     // add to force play controller stream
     socket?.on('forcePlay', (data) async {
       debugPrint("Force Play Received ::::: $data");
+
       _forcePlayController.add(data);
     });
 
@@ -339,7 +369,9 @@ class SocketService {
     // on device assigned from socket
     socket?.on("deviceAssigned", (data) {
       debugPrint("Device Assigned ::: $data");
-      completer.completeError(const Failure(message: "Device Layout Not Found. Please add device layout and try again."));
+      completer.completeError(const Failure(
+          message:
+              "Device Layout Not Found. Please add device layout and try again."));
       // complete the future with device layout info
       DeviceLayoutInfo deviceLayout = DeviceLayoutInfo.fromJson(data);
       completer.complete(deviceLayout);
@@ -348,7 +380,9 @@ class SocketService {
     socket?.on('deviceAssignFailed', (data) {
       debugPrint("Device Assign Failed ::: $data");
       // complete the future with error
-      completer.completeError(const Failure(message: "Device Assign Failed. Please contact your system administrator."));
+      completer.completeError(const Failure(
+          message:
+              "Device Assign Failed. Please contact your system administrator."));
     });
     // return future
     DeviceLayoutInfo? deviceLayout = await completer.future;

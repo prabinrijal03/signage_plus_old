@@ -203,6 +203,7 @@ class HomeScreen extends StatelessWidget {
           ),
           BlocProvider<ContentsBloc>(
             create: (BuildContext context) => ContentsBloc(
+                remoteDatasource: getInstance(),
                 fetchContents: getInstance(),
                 download: getInstance(),
                 tokenBloc: context.read<TokenBloc>())

@@ -49,6 +49,7 @@ class HiveService {
     await Hive.openBox<WardDetails>(wardDetails);
     await Hive.openBox<WardSettings>(wardSettings);
     await Hive.openBox<String>(wardContent);
+    await Hive.openBox<String>(forcePlayStatus);
   }
 
   static Future<void> clear() async {
@@ -62,6 +63,7 @@ class HiveService {
         Hive.deleteBoxFromDisk(wardDetails),
         Hive.deleteBoxFromDisk(wardSettings),
         Hive.deleteBoxFromDisk(wardContent),
+        Hive.deleteBoxFromDisk(forcePlayStatus),
       ],
     );
   }
@@ -104,7 +106,9 @@ class HiveService {
   }
 
   DateTime? getStoredDateTime() {
-    return dateTimeBox.get("dateTime") != null ? DateTime.parse(dateTimeBox.get("dateTime")!.replaceAll("+0545", "Z")) : null;
+    return dateTimeBox.get("dateTime") != null
+        ? DateTime.parse(dateTimeBox.get("dateTime")!.replaceAll("+0545", "Z"))
+        : null;
   }
 
 // ------------ Device Extras ------------
@@ -203,26 +207,30 @@ class HiveService {
 
   // ------------ Scrolling Text ------------
   static String scrollingTexts = 'scrollingText';
-  static Box<ScrollTexts> scrollingTextsBox = Hive.box<ScrollTexts>(scrollingTexts);
+  static Box<ScrollTexts> scrollingTextsBox =
+      Hive.box<ScrollTexts>(scrollingTexts);
 
   void addScrollingTextToBox(ScrollTexts scrollTexts) {
     scrollingTextsBox.put("scrollTexts", scrollTexts);
   }
 
-  void appendScrollingTextToBox(List<ScrollText> scrollTexts, {bool isUpdate = false}) {
+  void appendScrollingTextToBox(List<ScrollText> scrollTexts,
+      {bool isUpdate = false}) {
     // append content to box
     final scrollingTexts = getAllScrollingText();
     if (scrollingTexts != null) {
       scrollingTexts.scrollTexts.addAll(scrollTexts);
       scrollingTextsBox.put("scrollTexts", scrollingTexts);
     } else {
-      scrollingTextsBox.put("scrollTexts", ScrollTexts(scrollTexts: scrollTexts));
+      scrollingTextsBox.put(
+          "scrollTexts", ScrollTexts(scrollTexts: scrollTexts));
     }
 
     // return if content is updated to avoid logging twice
     if (isUpdate) return;
     // send content added log
-    LogService.sendScrollingTextAcknowledge(scrollTexts.first, RemarkConstants.addedScrollTextToScrollTextBox);
+    LogService.sendScrollingTextAcknowledge(
+        scrollTexts.first, RemarkConstants.addedScrollTextToScrollTextBox);
   }
 
   void deleteScrollingTextFromBox(String id, {bool isUpdate = false}) {
@@ -230,7 +238,8 @@ class HiveService {
     // delete scrolling text from active scrolling texts
     ScrollTexts? scrollTexts = scrollingTextsBox.get("scrollTexts");
     if (scrollTexts != null) {
-      scrollTextToBeDeleted = scrollTexts.scrollTexts.firstWhereOrNull((content) => content.id == id);
+      scrollTextToBeDeleted = scrollTexts.scrollTexts
+          .firstWhereOrNull((content) => content.id == id);
       scrollTexts.scrollTexts.remove(scrollTextToBeDeleted);
       scrollingTextsBox.put("scrollTexts", scrollTexts);
     }
@@ -238,7 +247,8 @@ class HiveService {
     if (isUpdate) return;
     // send content deleted log
     if (scrollTextToBeDeleted != null) {
-      LogService.sendScrollingTextAcknowledge(scrollTextToBeDeleted, RemarkConstants.deletedScrollText);
+      LogService.sendScrollingTextAcknowledge(
+          scrollTextToBeDeleted, RemarkConstants.deletedScrollText);
     }
   }
 
@@ -246,7 +256,8 @@ class HiveService {
     deleteScrollingTextFromBox(scrollText.id, isUpdate: true);
     appendScrollingTextToBox([scrollText], isUpdate: true);
     // send scrolltext updated log
-    LogService.sendScrollingTextAcknowledge(scrollText, RemarkConstants.updatedScrollText);
+    LogService.sendScrollingTextAcknowledge(
+        scrollText, RemarkConstants.updatedScrollText);
   }
 
   ScrollTexts? getAllScrollingText() {
@@ -256,7 +267,9 @@ class HiveService {
   ScrollTexts? getActiveScrollingText() {
     final scrollTexts = scrollingTextsBox.get("scrollTexts");
     if (scrollTexts == null) return null;
-    final activeScrollTexts = scrollTexts.scrollTexts.where((scrollText) => Utils.isScrollTextActive(scrollText)).toList();
+    final activeScrollTexts = scrollTexts.scrollTexts
+        .where((scrollText) => Utils.isScrollTextActive(scrollText))
+        .toList();
     if (activeScrollTexts.isEmpty) return null;
     return ScrollTexts(scrollTexts: activeScrollTexts);
   }
@@ -264,7 +277,9 @@ class HiveService {
   ScrollTexts? getInactiveScrollingText() {
     final scrollTexts = scrollingTextsBox.get("scrollTexts");
     if (scrollTexts == null) return null;
-    final inactiveScrollTexts = scrollTexts.scrollTexts.where((scrollText) => !Utils.isScrollTextActive(scrollText)).toList();
+    final inactiveScrollTexts = scrollTexts.scrollTexts
+        .where((scrollText) => !Utils.isScrollTextActive(scrollText))
+        .toList();
     if (inactiveScrollTexts.isEmpty) return null;
     return ScrollTexts(scrollTexts: inactiveScrollTexts);
   }
@@ -277,7 +292,8 @@ class HiveService {
     contentsBox.put("contents", contents.toString());
   }
 
-  Future<void> appendContentsToBox(Content content, {bool isUpdate = false}) async {
+  Future<void> appendContentsToBox(Content content,
+      {bool isUpdate = false}) async {
     // append content to box
     final contents = getAllContents();
     if (contents != null) {
@@ -288,7 +304,8 @@ class HiveService {
     }
     if (isUpdate) return;
     // send content added log
-    LogService.sendContentAcknowledge(content, RemarkConstants.addedToContentBox);
+    LogService.sendContentAcknowledge(
+        content, RemarkConstants.addedToContentBox);
   }
 
   void updateContentInBox(Content content) {
@@ -304,7 +321,8 @@ class HiveService {
     // delete content from active contents
     final Contents? contents = getAllContents();
     if (contents != null) {
-      contentToBeDeleted = contents.contents.firstWhereOrNull((content) => content.id == id);
+      contentToBeDeleted =
+          contents.contents.firstWhereOrNull((content) => content.id == id);
 
       contents.contents.remove(contentToBeDeleted);
       contentsBox.put('contents', contents.toString());
@@ -314,14 +332,16 @@ class HiveService {
     if (isUpdate) return;
     // send content deleted log
     if (contentToBeDeleted != null) {
-      LogService.sendContentAcknowledge(contentToBeDeleted, RemarkConstants.deletedContent);
+      LogService.sendContentAcknowledge(
+          contentToBeDeleted, RemarkConstants.deletedContent);
     }
   }
 
   Contents? getAllContents() {
     final contents = contentsBox.get("contents");
     if (contents == null) return null;
-    final contentsList = Contents.fromJson(jsonDecode(contents)['content']).contents;
+    final contentsList =
+        Contents.fromJson(jsonDecode(contents)['content']).contents;
     return Contents(contents: contentsList);
   }
 
@@ -329,8 +349,11 @@ class HiveService {
     // get active contents
     final contents = contentsBox.get("contents");
     if (contents == null) return null;
-    final contentsList = Contents.fromJson(jsonDecode(contents)['content']).contents;
-    final activeContents = contentsList.where((content) => Utils.isContentActive(content)).toList();
+    final contentsList =
+        Contents.fromJson(jsonDecode(contents)['content']).contents;
+    final activeContents = contentsList
+        .where((content) => Utils.isContentActive(content))
+        .toList();
     if (activeContents.isEmpty) return null;
     return Contents(contents: activeContents);
   }
@@ -339,8 +362,11 @@ class HiveService {
     // get inactive contents
     final contents = contentsBox.get("contents");
     if (contents == null) return null;
-    final contentsList = Contents.fromJson(jsonDecode(contents)['content']).contents;
-    final inactiveContents = contentsList.where((content) => !Utils.isContentActive(content)).toList();
+    final contentsList =
+        Contents.fromJson(jsonDecode(contents)['content']).contents;
+    final inactiveContents = contentsList
+        .where((content) => !Utils.isContentActive(content))
+        .toList();
     if (inactiveContents.isEmpty) return null;
     return Contents(contents: inactiveContents);
   }
@@ -348,10 +374,12 @@ class HiveService {
   // --------- Play Log Sync ---------
 
   static String playLogSync = 'playLogSync';
-  static Box<List<PlayLogSync>> playLogSyncBox = Hive.box<List<PlayLogSync>>(playLogSync);
+  static Box<List<PlayLogSync>> playLogSyncBox =
+      Hive.box<List<PlayLogSync>>(playLogSync);
 
   void addPlayLogSyncToBox(PlayLogSync playLogSync) {
-    List<PlayLogSync> playLogSyncs = getAllPlayLogSyncFromBox(playLogSync.deviceId);
+    List<PlayLogSync> playLogSyncs =
+        getAllPlayLogSyncFromBox(playLogSync.deviceId);
     playLogSyncs.add(playLogSync);
     playLogSyncBox.put(playLogSync.deviceId, playLogSyncs);
   }
@@ -407,7 +435,9 @@ class HiveService {
   List<CustomUser> getCustomUserFromBox() {
     final jsonString = customUserBox.get("customUser");
     if (jsonString != null) {
-      return (jsonDecode(jsonString) as List).map((e) => CustomUser.fromJson(e)).toList();
+      return (jsonDecode(jsonString) as List)
+          .map((e) => CustomUser.fromJson(e))
+          .toList();
     } else {
       throw Exception();
     }
@@ -432,7 +462,8 @@ class HiveService {
 
   // --------- Ward Settings ---------
   static String wardSettings = 'wardSettings';
-  static Box<WardSettings> wardSettingsBox = Hive.box<WardSettings>(wardSettings);
+  static Box<WardSettings> wardSettingsBox =
+      Hive.box<WardSettings>(wardSettings);
 
   void addWardSettingsToBox(WardSettings wardSettings) {
     wardSettingsBox.put("wardSettings", wardSettings);
@@ -474,7 +505,9 @@ class HiveService {
   List<WardContent>? getWardContentsFromBox() {
     final wardContent = wardContentBox.get("wardContent");
     if (wardContent != null) {
-      return (jsonDecode(wardContent) as List).map((e) => WardContent.fromJson(e)).toList();
+      return (jsonDecode(wardContent) as List)
+          .map((e) => WardContent.fromJson(e))
+          .toList();
     }
     return null;
   }
@@ -492,5 +525,16 @@ class HiveService {
     wardContents.removeWhere((element) => element.id == wardContent.first.id);
     wardContents.addAll(wardContent);
     wardContentBox.put("wardContent", jsonEncode(wardContents));
+  }
+
+// ------------ Ward Content ------------
+  static String forcePlayStatus = 'forcePlayStatus';
+  static Box<String> forcePlayEnabledBox = Hive.box<String>(forcePlayStatus);
+  void savedForcePlayStatus( bool status) {
+    forcePlayEnabledBox.put(forcePlayStatus, status.toString());
+  }
+
+  bool getForcePlayStatus() {
+    return forcePlayEnabledBox.get(forcePlayStatus) == "true";
   }
 }

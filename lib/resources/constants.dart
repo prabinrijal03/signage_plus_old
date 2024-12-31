@@ -55,6 +55,11 @@ class UrlConstants {
   static const version = '/api/v1';
 
   // static String versionUrl = Utils.getVersionUrl();
+  static String forcePlayEnabled =
+      'https://api.signageplus.net/api/v1/devices/force-play/:deviceId';
+
+        static String forcePlayEnabledContent =
+      'https://api.signageplus.net/api/v1/devices/force-play';
   static String versionUrl = '$baseUrl$version';
   static const tokenVersionUrl = '$tokenSocketUrl$version';
   static const tokenBaseVersionUrl = '$tokenBaseUrl$version';

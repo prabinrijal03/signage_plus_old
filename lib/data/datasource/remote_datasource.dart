@@ -24,6 +24,8 @@ abstract class RemoteDatasource {
   Future<ScrollTexts> getScrollTexts();
   Future<Contents> getContents();
   Future<void> download(String url, String path);
+  Future<bool> forcePLayEnabled(String deviceId);
+  Future<void> contentsForcePlay(String orgId, String contentId);
   Future<ContentUrls> getContentUrls();
   Future<void> sendContentRemarks(String contentId, String deviceId, String url,
       String savedAt, String remark);
@@ -80,6 +82,51 @@ class RemoteDatasourceImpl implements RemoteDatasource {
       HiveService().addAccessTokenToBox(response.data['data']['accessToken']);
       return Devices.fromJson(response.data['data']['devices']);
     } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<bool> forcePLayEnabled(String deviceId) async {
+    try {
+      final response = await _dio.get(
+          UrlConstants.forcePlayEnabled.replaceFirst(':deviceId', deviceId));
+      if (response.statusCode == 200) {
+        print("Response Message: ${response.data['message']}");
+        print("Data: ${response.data['data']}");
+        return true;
+      } else {
+        print("Error: ${response.statusCode}");
+        return false;
+      }
+    } on DioException catch (e) {
+      if (e.response != null) {
+        print("Error Response: ${e.response?.data}");
+      } else {
+        print("Error Message: ${e.message}");
+      }
+      return false;
+    }
+  }
+
+  @override
+  Future<dynamic> contentsForcePlay(String orgId, String contentId) async {
+    try {
+      final response = await _dio.post(
+        UrlConstants.forcePlayEnabledContent,
+        data: {
+          "orgId": orgId,
+          "contentId": contentId,
+        },
+      );
+
+      if (response.data != null && response.data['data'] != null) {
+        return response.data['data'];
+      } else {
+        throw Exception('Invalid response format: ${response.data}');
+      }
+    } catch (e) {
+      print('Error in contentsForcePlay: $e');
       rethrow;
     }
   }

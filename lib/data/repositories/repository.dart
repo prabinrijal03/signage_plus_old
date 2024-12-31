@@ -55,6 +55,7 @@ class RepositoryImpl implements Repository {
   final RemoteDatasource remoteDataSource;
   final NetworkInfo networkInfo;
   final LocalDatasource localDataSource;
+  
 
   const RepositoryImpl(this.remoteDataSource, this.localDataSource, this.networkInfo);
 
