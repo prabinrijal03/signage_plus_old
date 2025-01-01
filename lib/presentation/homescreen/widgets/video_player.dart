@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
@@ -9,9 +10,15 @@ class VideoWidget extends StatefulWidget {
   final ContentsBloc contentsBloc;
   final String video;
   final int volume;
+  final String? contentId;
 
-  const VideoWidget(this.contentsBloc, this.video,
-      {super.key, required this.volume});
+  const VideoWidget(
+    this.contentsBloc,
+    this.video, {
+    super.key,
+    required this.volume,
+    this.contentId,
+  });
 
   @override
   State<VideoWidget> createState() => _VideoWidgetState();
@@ -25,24 +32,23 @@ class _VideoWidgetState extends State<VideoWidget> {
   void initState() {
     super.initState();
 
-    _controller = VideoPlayerController.file(
-        File("${HiveService.dir.path}/video/${widget.video.split("/").last}"),
-        videoPlayerOptions: VideoPlayerOptions(
-            mixWithOthers: true, allowBackgroundPlayback: true));
+    _controller = VideoPlayerController.file(File("${HiveService.dir.path}/video/${widget.video.split("/").last}"),
+        videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true, allowBackgroundPlayback: true));
 
     _controller.initialize().then((_) => setState(() {
           _controller.setVolume(widget.volume.toDouble() / 100);
           _controller.play();
           isReady = true;
-          
+          final contentId = widget.contentId;
+          if (contentId != null) {
+            widget.contentsBloc.add(ForcePlayNotify(playTime: _controller.value.duration, contentId: contentId));
+          }
         }));
 
     _controller.addListener(() {
       if (_controller.value.position == _controller.value.duration) {
         widget.contentsBloc.videoCompletion[widget.key.toString()] = true;
-        if (widget.contentsBloc.videoCompletion.values
-                .every((element) => element == true) &&
-            !widget.contentsBloc.isContentChanging) {
+        if (widget.contentsBloc.videoCompletion.values.every((element) => element == true) && !widget.contentsBloc.isContentChanging) {
           widget.contentsBloc.isContentChanging = true;
 
           widget.contentsBloc.add(const ChangeContent());
@@ -81,8 +87,7 @@ class _VideoWidgetState extends State<VideoWidget> {
             height: double.maxFinite,
             width: double.maxFinite,
             child: Image.file(
-              File(
-                  "${HiveService.dir.path}/video/${widget.video.split("/").last}.png"),
+              File("${HiveService.dir.path}/video/${widget.video.split("/").last}.png"),
               fit: BoxFit.fill,
             ),
           );
