@@ -637,7 +637,9 @@ class HomeScreen extends StatelessWidget {
             //   child:
             Stack(children: [
           Column(
-            children: [buildContentLayout(context, state.content.layout)],
+            children: [
+              buildContentLayout(context, layoutInfo: state.content.layout)
+            ],
           ),
           if (state.content.layout.overlay != null) ...[
             Positioned(
@@ -791,7 +793,8 @@ class _QuizPlayingWidgetState extends State<QuizPlayingWidget> {
   }
 }
 
-Widget buildContentLayout(BuildContext context, ContentLayout layoutInfo) {
+Widget buildContentLayout(BuildContext context,
+    {required ContentLayout layoutInfo, String? contentId}) {
   final dataType = layoutInfo.data?.fileType;
   final margin = layoutInfo.margin;
 
@@ -801,12 +804,14 @@ Widget buildContentLayout(BuildContext context, ContentLayout layoutInfo) {
       child: layoutInfo.type == "Row"
           ? Row(
               children: layoutInfo.children!
-                  .map((child) => buildContentLayout(context, child))
+                  .map((child) => buildContentLayout(context,
+                      layoutInfo: child, contentId: contentId))
                   .toList(),
             )
           : Column(
               children: layoutInfo.children!
-                  .map((child) => buildContentLayout(context, child))
+                  .map((child) => buildContentLayout(context,
+                      layoutInfo: child, contentId: contentId))
                   .toList(),
             ),
     );

@@ -34,6 +34,7 @@ class _VideoWidgetState extends State<VideoWidget> {
           _controller.setVolume(widget.volume.toDouble() / 100);
           _controller.play();
           isReady = true;
+          
         }));
 
     _controller.addListener(() {

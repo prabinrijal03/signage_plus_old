@@ -36,3 +36,10 @@ class ForcePlay extends ContentsEvent {
 
   const ForcePlay({required this.contentId});
 }
+
+class ForcePlayNotify extends ContentsEvent {
+  final Duration playTime;
+  final String contentId;
+
+  const ForcePlayNotify({required this.playTime, required this.contentId});
+}

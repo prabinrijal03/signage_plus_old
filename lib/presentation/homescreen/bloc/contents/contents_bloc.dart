@@ -75,23 +75,33 @@ class ContentsBloc extends Bloc<ContentsEvent, ContentsState> {
             startDelayedAction(content.displayTime);
           }
           final displayTime = content.displayTime;
-          final forcePlayEnabled = HiveService().getForcePlayStatus();
-          if (forcePlayEnabled) {
-            Timer(Duration(seconds: displayTime - 1), () {
-              final orgId = HiveService().getOrganizationId();
-              if (orgId == null) return;
-              final contentId = content.id;
-              fetchContentBeforeEnd(orgId, contentId);
-              print(
-                  'fetchContentBeforeEnd called with orgId: $orgId, contentId: $contentId');
-            });
-          }
+          add(
+            ForcePlayNotify(
+              playTime: Duration(seconds: displayTime),
+              contentId: content.id,
+            ),
+          );
+
           // emit first content
           return emit(LoadedContents(content));
         }
       });
     });
-
+    on<ForcePlayNotify>((event, emit) async {
+      final forcePlayNotifyDuration =
+          Duration(seconds: event.playTime.inSeconds - 2);
+      final forcePlayEnabled = HiveService().getForcePlayStatus();
+      if (forcePlayEnabled) {
+        Timer(forcePlayNotifyDuration, () {
+          final orgId = HiveService().getOrganizationId();
+          if (orgId == null) return;
+          final contentId = event.contentId;
+          fetchContentBeforeEnd(orgId, contentId);
+          print(
+              'fetchContentBeforeEnd called with orgId: $orgId, contentId: $contentId');
+        });
+      }
+    });
     on<ChangeContent>((event, emit) async {
       videoCompletion.updateAll((key, value) => value = false);
       contentTimer?.cancel();
@@ -103,6 +113,10 @@ class ContentsBloc extends Bloc<ContentsEvent, ContentsState> {
           // If the content has no video, start a timer to change content after display time
           if (!nextContent.layout.hasVideo!) {
             startDelayedAction(nextContent.displayTime);
+          }
+          if (nextContent.layout.hasVideo!) {
+            add(ForcePlayNotify(
+                playTime: Duration(seconds: nextContent.displayTime), contentId: nextContent.id));
           }
           return emit(LoadedContents(nextContent));
         }
