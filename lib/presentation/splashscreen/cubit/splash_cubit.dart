@@ -32,11 +32,10 @@ class SplashCubit extends Cubit<SplashState> {
       }, (r) {
         if (!r) Navigator.pushReplacementNamed(context, '/login');
       });
-    }
-    try {
+        try {
       RemoteDatasource remoteDataSource = getInstance();
       bool isForcePlayEnabled =
-          await remoteDataSource.forcePLayEnabled(deviceId!);
+          await remoteDataSource.forcePLayEnabled(deviceId);
       if (isForcePlayEnabled) {
         print("Force play is enabled");
         hiveService.savedForcePlayStatus(isForcePlayEnabled);
@@ -46,6 +45,8 @@ class SplashCubit extends Cubit<SplashState> {
     } catch (e) {
       print("Error occurred while checking force play: $e");
     }
+    }
+  
 
     // Delay 2 seconds and navigate to login screen if device id is null
     // else navigate to home screen

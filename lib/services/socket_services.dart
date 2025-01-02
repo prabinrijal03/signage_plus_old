@@ -338,6 +338,8 @@ class SocketService {
 
     socket?.on("forcePlayWard", (data) {
       debugPrint("Force Play Ward Received ::: $data");
+      print("Force Play ward Received ::::: $data");
+
       _forcePlayWardController.add(data);
     });
   }
