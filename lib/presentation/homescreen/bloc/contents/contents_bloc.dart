@@ -96,8 +96,6 @@ class ContentsBloc extends Bloc<ContentsEvent, ContentsState> {
           if (orgId == null) return;
           final contentId = event.contentId;
           fetchContentBeforeEnd(orgId, contentId);
-          print(
-              'fetchContentBeforeEnd called with orgId: $orgId, contentId: $contentId');
         });
       }
     });

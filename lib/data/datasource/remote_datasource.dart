@@ -138,7 +138,7 @@ Future<dynamic> contentsForcePlay(String orgId, String contentId) async {
     }
   } catch (e) {
     print('Error in contentsForcePlay: $e');
-    rethrow;
+    return false;
   }
 }
 
