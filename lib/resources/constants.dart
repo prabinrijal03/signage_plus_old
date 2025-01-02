@@ -10,7 +10,7 @@ class AppConstants {
   static DateTime get now =>
       HiveService().getStoredDateTime() ?? DateTime.now();
   static DateTime ntpNow = now;
-  static const date = 'Dec 18, 2024';
+  static const date = 'Jan 1, 2025';
   static const Map<String, String> downloadingList = {};
   static bool? isRooted;
 
@@ -58,7 +58,7 @@ class UrlConstants {
   static String forcePlayEnabled =
       'https://api.signageplus.net/api/v1/devices/force-play/:deviceId';
 
-        static String forcePlayEnabledContent =
+  static String forcePlayEnabledContent =
       'https://api.signageplus.net/api/v1/devices/force-play';
   static String versionUrl = '$baseUrl$version';
   static const tokenVersionUrl = '$tokenSocketUrl$version';

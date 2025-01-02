@@ -109,27 +109,42 @@ class RemoteDatasourceImpl implements RemoteDatasource {
     }
   }
 
-  @override
-  Future<dynamic> contentsForcePlay(String orgId, String contentId) async {
-    try {
-      final response = await _dio.post(
-        UrlConstants.forcePlayEnabledContent,
-        data: {
-          "orgId": orgId,
-          "contentId": contentId,
-        },
-      );
+@override
+Future<dynamic> contentsForcePlay(String orgId, String contentId) async {
+  try {
+    final response = await _dio.post(
+      UrlConstants.forcePlayEnabledContent,
+      data: {
+        "orgId": orgId,
+        "contentId": contentId,
+      },
+    );
 
-      if (response.data != null && response.data['data'] != null) {
-        return response.data['data'];
-      } else {
-        throw Exception('Invalid response format: ${response.data}');
+    print('Full response data: ${response.data}');
+
+    if (response.data != null && response.data is Map<String, dynamic>) {
+      final responseData = response.data;
+
+      if (responseData.containsKey('data')) {
+        return responseData['data'];
+      } else if (responseData.containsKey('message')) {
+        return responseData['message'];
       }
-    } catch (e) {
-      print('Error in contentsForcePlay: $e');
-      rethrow;
     }
+  } on DioException catch (e) {
+    if (e.response != null) {
+      if (e.response?.statusCode == 500) {
+        print("Error: Internal Server Error (500)");
+      } else {
+        print("Error Response: ${e.response?.data}");
+      }
+    } else {
+      print("Error Message: ${e.message}");
+    }
+    return false;
   }
+}
+
 
   @override
   Future<bool> assignDevice(String deviceId) async {

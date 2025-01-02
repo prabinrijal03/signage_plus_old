@@ -270,7 +270,7 @@ class SocketService {
     // add to force play controller stream
     socket?.on('forcePlay', (data) async {
       debugPrint("Force Play Received ::::: $data");
-
+      print("Force Play Received ::::: $data");
       _forcePlayController.add(data);
     });
 
