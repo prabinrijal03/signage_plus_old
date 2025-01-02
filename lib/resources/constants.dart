@@ -10,7 +10,7 @@ class AppConstants {
   static DateTime get now =>
       HiveService().getStoredDateTime() ?? DateTime.now();
   static DateTime ntpNow = now;
-  static const date = 'Jan 1, 2025';
+  static const date = 'Jan 2, 2025';
   static const Map<String, String> downloadingList = {};
   static bool? isRooted;
 

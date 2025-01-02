@@ -109,7 +109,7 @@ class RemoteDatasourceImpl implements RemoteDatasource {
     }
   }
 
-@override
+  @override
 Future<dynamic> contentsForcePlay(String orgId, String contentId) async {
   try {
     final response = await _dio.post(
@@ -122,6 +122,7 @@ Future<dynamic> contentsForcePlay(String orgId, String contentId) async {
 
     print('Full response data: ${response.data}');
 
+   
     if (response.data != null && response.data is Map<String, dynamic>) {
       final responseData = response.data;
 
@@ -129,19 +130,15 @@ Future<dynamic> contentsForcePlay(String orgId, String contentId) async {
         return responseData['data'];
       } else if (responseData.containsKey('message')) {
         return responseData['message'];
-      }
-    }
-  } on DioException catch (e) {
-    if (e.response != null) {
-      if (e.response?.statusCode == 500) {
-        print("Error: Internal Server Error (500)");
       } else {
-        print("Error Response: ${e.response?.data}");
+        throw Exception('Unexpected response format: ${responseData}');
       }
     } else {
-      print("Error Message: ${e.message}");
+      throw Exception('Response is not a JSON object: ${response.data}');
     }
-    return false;
+  } catch (e) {
+    print('Error in contentsForcePlay: $e');
+    rethrow;
   }
 }
 
